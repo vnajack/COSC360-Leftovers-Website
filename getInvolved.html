@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Leftovers Club Events</title>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Leftovers logo" height="100">
+  	<h1>Leftovers Club UBCO</h1>
+    <p>Reducing food waste on campus at UBC Okanagan</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="getInvolved.html">Get Involved</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+	<main>
+		<h1><a id="getInvolved">Get Involved</a></h1>
+    <section>
+      <a id="volunteer">
+      <h2>Looking to volunteer?</h2>
+      <p>Fill out this form</p>
+      <form action="/thankyou.html" target="_self" method="post">
+        Full name:<br>
+        <input type="text" name="name" required><br>
+        Year of Study:<br>
+        <input type="number" name="yearOfStudy" min="1" max="5"><br>
+        Email:<br>
+        <input type="email" name="email"><br>
+        Program/Degree:<br>
+        <input type="text" name="program"><br>
+        Why do you want to volunteer with the leftovers club?<br>
+        <input type="text" name="whyVolunteer"><br>
+        What is your availability like? (i.e., lots of time, evenings, weekends)<br>
+        <input type="text" name="availability"><br>
+        What kind of strengths and skills do you have to contribute to the club? (design, photography, public speaking, etc.)<br>
+        <input type="text" name="strengths"><br>
+        What other time constraints do you have? (clubs, jobs, heavy class load)<br>
+        <input type="text" name="timeConstraints"><br>
+        <input type="checkbox" name="useFacebook">You use Facebook or are willing to use Facebook. (Our club communication is mostly through Facebook.)<br>
+      </form>
+      <p>You can also <a href="leftovers_VolunteerApplicationForm.png">print this form</a> and give it to us in person!</p>
+    </section>
+    <hr>
+    <section>
+      <a id="haveLeftovers">
+	  	<h2>Do you have leftovers that we can distribute?</h2>
+      <p>Please note our purpose and protocols. Our goal is to reduce food waste on campus by distributing extra food left over from events and food service providers to students around campus.</p>
+    	<p><a href="mailto:leftoversubco@gmail.com?Subject=Food%20Provider">Contact us</a> or fill out this form:</p>
+      <form action="/thankyou.html" target="_self" method="post">
+        Full name:<br>
+        <input type="text" name="name" required><br>
+        Email address:<br>
+        <input type="email" name="email"><br>
+        Phone number:<br>
+        <input type="text" name="phone"><br>
+        Who are you?<br>
+        <input type="radio" name="source" value="FoodService" checked> Food service on campus<br>
+        <input type="radio" name="source" value="StudentGroup"> Student group<br>
+        <input type="radio" name="source" value="faculty"> Faculty<br>
+        <input type="radio" name="source" value="staff"> Staff<br>
+        <input type="radio" name="source" value="student"> Student<br>
+        <input type="radio" name="source" value="other"> Other<br>
+        Please provide information about the food:<br>
+        <input type="text" name="foodInfo">
+        <input type="submit" value="Submit">
+      </form>
+    </section>
+    <hr>
+  </main>
+  <footer>
+    <p>Last updated <time datetime="2020-01-14">14 January 2020</time></p>
+    <p>Leftovers Club UBCO</p>
+  </footer>
+</body>
+</html>
