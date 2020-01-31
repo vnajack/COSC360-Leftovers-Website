@@ -1,0 +1,58 @@
+#mainHeader{
+  background-image:url(images/headerOption2.png);
+  background-repeat: repeat-x;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: seagreen;
+}
+
+li {
+  text-indent: 50px;
+  text-align: justify;
+  letter-spacing: 2px;
+}
+
+.headerNav {
+  float: left;
+}
+
+.headerNav a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.headerNav a:hover {
+  background-color: darkseagreen;
+}
+#clubLogo{
+  float: left;
+  padding: 10px;
+  width: 15%;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #4CAF50;
+  text-shadow: 3px 2px black;
+}
+
+p {
+  text-indent: 50px;
+  text-align: justify;
+  letter-spacing: 2px;
+}
+
+
+footer{
+  background: url(images/footerImg.jpg);
+  background-repeat:repeat-x;
+}

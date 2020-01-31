@@ -1,0 +1,34 @@
+#mainHeader{
+  background-image:url(images/headerOption2.png);
+  background-repeat: repeat-x;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: seagreen;
+}
+
+li {
+  text-indent: 50px;
+  text-align: justify;
+  letter-spacing: 2px;
+}
+
+.headerNav {
+  float: left;
+}
+
+.headerNav a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.headerNav a:hover {
+  background-color: darkseagreen;
+}
