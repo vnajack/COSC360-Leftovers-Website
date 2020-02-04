@@ -1,55 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>COSC 360</title>
+  <title> Leftovers Club - Log In </title>
+  <meta charset = "utf-8">
 </head>
 <body>
-  <header>
-  	<h1>Website for COSC 360</h1>
-    <nav>
-      <ul>
-        <li><a href="#Home">Home</a></li>
-        <li><a href="#Assignments">Assignments</a></li>
-        <li><a href="#SampleExams">Sample Exams</a></li>
-      </ul>
-    </nav>
-  </header>
-	<main>
-		<h1><a id="Home">COSC 360</a></h1>
-  	<section>
-	  	<h2>Class Notes</h2>
-    	<article>
-				<h3>Class 1</h3>
-				<p>content</p>
-			</article>
-			<article>
-				<h3>Class 2</h3>
-				<p>content</p>
-			</article>
-			<article>
-				<h3>Class 3</h3>
-				<p>content</p>
-			</article>
-		</section>
-		<section>
-			<h2>Exam Dates</h2>
-			<p>Midterm 1: <time datetime="2020-10-12">October 12</time></p>
-			<p>Midterm 2: <time datetime="2020-11-10">Nov.10</time></p>
-			<aside>This could be a side bar for outside resources to exam accommodations</aside>
-			<hr>
-		</section>
-		<section>
-			<h2>UBCO Campus</h2>
-	    <figure>
-	      <img src="02-2-okanagan_campus_800x253" alt="UBC Okanagan Campus">
-	      <figcaption>UBC Okanagan Campus</figcaption>
-	    </figure>
-			<hr>
-		</section>
-	</main>
-  <footer>
-    <p>Copyright &#169; UBC Okanagan <time datetime="2019-11-08">November 8, 2019</time></p>
-  </footer>
+  <h1> Welcome Back! </h1>
+  <p> Please fill out the following fields with your login credentials </p>
+  <form name="createAccount" method=post action="loggedIn.html" autocomplete="off">
+		<table>
+			<tr>
+				<th><label>User Name: </label></th>
+				<td><input type="text" name="username" pattern="[a-zA-Z0-9]+" title="Can only contain letters and numbers. No punctuation or special characters." required></td>
+			</tr>
+			<tr>
+				<th><label>Password: </label></th>
+				<td><input type="password" name="password" size=40 pattern=".{6,}" title="Your password must contain 6 or more characters" required></td>
+			</tr>
+    </table>
+  <input type = "submit">
+</form>
+<p> Forgot your credentials? <button onclick="">I forgot</button> </p>
 </body>
 </html>
