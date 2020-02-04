@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> UBCO LeftOver's Club </title>
+    <meta charset = "utf-8">
+  </head>
+  <body>
+    <main>
+<br>
+<section>
+  <a name="foodDonor">
+<form id ="foodDonation" method = "get" action="thankYou.html" >
+  <fieldset>
+    <legend>Food Donation</legend>
+    <p>
+    <label> Where is this food coming from?</label>
+    <input type="radio" name="donor" value="sunshine">Sunshine
+    <input type="radio" name="donor" value="spoon">Spoon
+    <input type="radio" name="donor" value="comma">Comma
+    <input type="radio" name="donor" value="picnic">Picnic
+    <input type="radio" name="donor" value="onCampusEvent"> On Campus Event
+  </p>
+  <p style="text-align: center"> Not a trusted donor? Email our executives to become one!
+    <a href="mailto:leftoversubco@gmail.com?Subject=Food%20Provider">
+  <img src="images/email_16.png"</p>
+</a>
+</p>
+    <p>
+    <label> Please enter the items that are available to be picked up </label>
+  </p>
+  <p>
+    <textarea name="foodDescription" form="foodDonation" rows = 5 cols=65></textarea>
+  </p>
+  <p>
+  <label> Please upload an image of the food </label>
+  <input type="file" name="picture" accept="image/*">
+</p>
+<p>
+  <label> How much food (in kg) would you estimate that you have? </label>
+  <input type="text" name="kg">
+</p>
+  <p>
+    <label> When can the food be picked up? </label>
+    <input type = "date" name="pickUpDate">
+    <input type="time" name="pickUpTime">
+    </p>
+    <input type="reset">
+    <input type="submit">
+  </fieldset>
+</form>
+</section>
+</body>
+</html>
