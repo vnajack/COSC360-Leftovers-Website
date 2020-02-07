@@ -1,0 +1,1 @@
+document.write('<div class="col-7"><section id="center-column">');  

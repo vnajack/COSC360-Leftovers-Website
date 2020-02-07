@@ -1,0 +1,87 @@
+header{
+  margin-bottom: 0;
+  height: 15em;
+  background-image: url("../images/header_2.png");
+  background-repeat: x-repeat;
+  position: relative;
+}
+footer{
+  margin-bottom: 0;
+  display: block;
+  background-color: #E9ECEF;
+  padding: 2em;
+}
+footer img{
+  vertical-align: middle;
+  margin-right: 1em;
+  max-height: 5em;
+  width: auto;
+}
+footer p{
+  text-align: center;
+  font-size: 0.8em;
+}
+/* If we want an image or text in the center of the header */
+/*header img{
+  height: 12em;
+  width: auto;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  border-radius:30%;
+}
+header h1{
+  top: 30%;
+  left: 50%;
+  position: absolute;
+  background-color: white;
+  padding: 1em;
+  width: auto;
+}*/
+
+/* Layout Columns */
+.row{
+  margin-top: 1em;
+}
+.col{
+  flex-grow: 1;
+}
+/* Get Involved Nav Pills */
+.nav-pills .nav-item a{
+  color: #8FC33C;
+}
+.nav-pills .nav-item a:hover{
+  color: white;
+  background-color: #8FC33C;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: white;
+  background-color: #8FC33C;
+}
+
+/* Headers */
+h1{
+  font-size: 2em;
+}
+h2{
+  font-size: 1.5em;
+}
+h3{
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Other */
+figure figcaption{
+  font-style: italic;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+#center-column article{
+  border-top: 1pt solid #ccc;
+  padding-top: 1em;
+}

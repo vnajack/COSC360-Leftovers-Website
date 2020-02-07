@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>UBCO Leftover's Club</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<main>
+	<section id="volunteerForm"> 
+		<p>You can also <a href="images/leftovers_VolunteerApplicationForm.png">print this form</a> and give it to us in person!</p> <!-- TODO: Have pdf instead of png for form -->
+		<form id="volunteer" method="get" action="createAccount.html">
+			<fieldset>
+				<legend> Volunteer Application Sheet </legend>
+				<label> Full Name: </label> <input type="text" name="name" required><br>
+				<label> Year of Study </label> <select name="yearOfStudy">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select><br>
+				<label> Program/Degree </label> <input type="text" name="program"><br>
+				<label> Why do you want to volunteer with the leftovers club? </label><br>
+				<textarea name="whyVolunteer" form="volunteer" rows=5 cols=65></textarea><br>
+				<label> What is your availability like? </label> <select name="availabilityChoices">
+					<option>Anytime</option>
+					<option>Mornings</option>
+					<option>Evengings</option>
+					<option>Weekends</option>
+				</select><br>
+				<label> What kind of strengths and skills do you have to contribute to the club? </label><br>
+					<input type="checkbox" name="skills" value="design">Design<br>
+					<input type="checkbox" name="skills" value="photography">Photography<br>
+					<input type="checkbox" name="skills" value="heavyLifting">Heavy Lifting<br>
+					<input type="checkbox" name="skills" value="Public speaking">Public speaking<br>
+				<label> Tells us about any other relevant information (such as time constraints, other skills) </label><br>
+				<textarea name="other" form="volunteer" rows=5 cols=65></textarea><br>
+				<input type="reset"> <input type="submit">
+			</fieldset>
+		</form>
+	</section>
+</main>
+</body>
+</html>

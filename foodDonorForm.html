@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <title> UBCO LeftOver's Club </title>
+	    <meta charset = "utf-8">
+	</head>
+	<body>
+		<main>
+			<section id="foodDonor">
+				<form id="foodDonation" method="get" action="thankYou.html">
+					<fieldset>
+						<legend>Food Donation</legend>
+						<p>
+							<label> Where is this food coming from?</label><br>
+							<input type="radio" name="donor" value="sunshine">Sunshine<br>
+							<input type="radio" name="donor" value="spoon">Spoon<br>
+							<input type="radio" name="donor" value="comma">Comma<br>
+							<input type="radio" name="donor" value="picnic">Picnic<br>
+							<input type="radio" name="donor" value="onCampusEvent">On-Campus Event<br>
+							Not a trusted donor? Email our executives to become one! <a href="mailto:leftoversubco@gmail.com?Subject=Food%20Provider"><img src="images/email_16.png"></a><br>
+						</p>
+						<p>
+							<label> Please enter the items that are available to be picked up</label><br>
+							<textarea name="foodDescription" form="foodDonation" rows=5 cols=65></textarea>
+						</p>
+						<p>
+							<label> Please upload an image of the food </label><input type="file" name="picture" accept="image/*">
+						</p>
+						<p>
+							<label> How much food (in kg) would you estimate that you have? </label> <input type="text" name="kg">
+						</p>
+						<p>
+							<label> When can the food be picked up? </label> <input type="date" name="pickUpDate"> <input type="time" name="pickUpTime">
+						</p>
+						<p><input type="reset"> <input type="submit"></p>
+					</fieldset>
+				</form>
+			</section>
+		</main>
+	</body>
+</html>
