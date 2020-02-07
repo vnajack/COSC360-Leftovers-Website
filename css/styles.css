@@ -76,7 +76,7 @@ figure figcaption{
   font-style: italic;
 }
 
-img {
+#left-column img {
   max-width: 100%;
   height: auto;
 }
@@ -84,4 +84,9 @@ img {
 #center-column article{
   border-top: 1pt solid #ccc;
   padding-top: 1em;
+}
+
+#center-column img{
+  height: auto;
+  max-width: 25em; 
 }
