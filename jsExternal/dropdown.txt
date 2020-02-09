@@ -1,0 +1,22 @@
+<!--Create the navigation items, it is collabsed when minimized and has an id.
+    The id must match the data-target below in the button element-->
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <!-- Declare you list using the navbar-nav class-->
+      <!-- navbar-nav for a full-height and lightweight navigation (including support for dropdowns-->
+      <ul class="navbar-nav">
+        <li class="nav-item" ><a class="nav-link" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="getInvolved.html">Get Involved</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+<!-- Creates a dropdown menu !-->
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Account Information
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="editAccount.html">Edit Account</a>
+          <a class="dropdown-item" href="volunteers.html">Volunteer List</a>
+          <a class="dropdown-item" href="index.html">Log Out</a>
+        </div>
+      </li>
+      </ul>
+    </div>
