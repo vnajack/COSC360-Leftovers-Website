@@ -1,15 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-	    <title> UBCO LeftOver's Club </title>
-	    <meta charset = "utf-8">
-	</head>
-	<body>
-		<main>
+<html lang = "en">
+<head>
+	<title>About Us</title>
+	<meta charset = "utf-8">
+<!-- NOT LOGGED IN -->  	<script type="text/javascript" src="jsExternal/header_notLoggedIn.txt"></script>
+<!-- isMEMBER LOGGED IN 	<script type="text/javascript" src="jsExternal/header_isMemberLoggedIn.txt"></script>  -->
+<!-- isVOLUNTEER LOGGED IN 	<script type="text/javascript" src="jsExternal/header_isVolunteerLoggedIn.txt"></script>  -->
+<!-- isADMIN LOGGED IN 		<script type="text/javascript" src="jsExternal/header_isAdminLoggedIn.txt"></script>  -->
+<script>
+function checkForm(){
+	var inputedItems = document.forms["donorSubmission"]["foodDescription"].value;
+	var inputedPicture = document.forms["donorSubmission"]["picture"].value;
+	var inputedKiloGrams = document.forms["donorSubmission"]["kg"].value;
+	var inputedDate = document.forms["donorSubmission"]["pickUpDate"].value;
+
+
+
+	if (inputedItems == "" || inputedPicture == "" || inputedKiloGrams == "" || inputedDate == ""){
+		alert("Please fill out all of the required fields");
+		return false;
+	}
+	else {
+		alert("Thank you for helping us reduce food waste on campus!");
+		window.location.href = "index.html";
+		return true;
+	}
+}
+</script>
+</head>
+<body>
+	<script type="text/javascript" src="jsExternal/left-column.txt"></script>
+	<main>
 			<section id="foodDonor">
-				<form id="foodDonation" method="get" action="thankYou.html">
+				<form id="foodDonation" name="donorSubmission" method="post" action="index.html"  onsubmit="return checkForm(this);">
 					<fieldset>
 						<legend>Food Donation</legend>
+						<p> Thanks for your donation! An asterisk indicates a required field.</p>
 						<p>
 							<label> Where is this food coming from?</label><br>
 							<input type="radio" name="donor" value="sunshine">Sunshine<br>
@@ -20,22 +46,25 @@
 							Not a trusted donor? Email our executives to become one! <a href="mailto:leftoversubco@gmail.com?Subject=Food%20Provider"><img src="images/email_16.png"></a><br>
 						</p>
 						<p>
-							<label> Please enter the items that are available to be picked up</label><br>
+							<label> Please enter the items that are available to be picked up *</label><br>
 							<textarea name="foodDescription" form="foodDonation" rows=5 cols=65></textarea>
 						</p>
 						<p>
-							<label> Please upload an image of the food </label><input type="file" name="picture" accept="image/*">
+							<label> Please upload an image of the food * </label><input type="file" name="picture" accept="image/*">
 						</p>
 						<p>
-							<label> How much food (in kg) would you estimate that you have? </label> <input type="text" name="kg">
+							<label> How much food (in kg) would you estimate that you have? * </label> <input type="text" name="kg">
 						</p>
 						<p>
-							<label> When can the food be picked up? </label> <input type="date" name="pickUpDate"> <input type="time" name="pickUpTime">
+							<label> When can the food be picked up?* </label> <input type="date" name="pickUpDate"> <input type="time" name="pickUpTime">
 						</p>
-						<p><input type="reset"> <input type="submit"></p>
+						<p><input type="reset"> <input type="submit" value="Submit">
 					</fieldset>
 				</form>
 			</section>
-		</main>
-	</body>
+	</main>
+  <!-- NOT LOGGED IN  -->	<script type="text/javascript" src="jsExternal/right-column_notLoggedIn.txt"></script>
+  <!-- IS LOGGED IN    		<script type="text/javascript" src="jsExternal/right-column_isLoggedIn.txt"></script> -->
+  <script type="text/javascript" src="jsExternal/footer.txt"></script>
+</body>
 </html>
