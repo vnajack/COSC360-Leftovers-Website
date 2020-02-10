@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>About Us</title>
+	<meta charset = "utf-8">
+	<script>
+	function checkForm(){
+		var inputedName = document.forms["volunteerApplication"]["name"].value;
+		var inputedUsername = document.forms["volunteerApplication"]["username"].value;
+		var inputedEmail = document.forms["volunteerApplication"]["email"].value;
+		var inputedPassword = document.forms["volunteerApplication"]["password"].value;
+		var inputedProfilePicture = document.forms["volunteerApplication"]["profilePicture"].value;
+		var inputedSecurityResponse = document.forms["volunteerApplication"]["securityResponse"].value;
+
+		nameReg = /[a-zA-Z- ]+/;
+		userNameReg = /[a-zA-Z0-9]+/;
+		passwordReg = /.{6,}/;
+		emailReg = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+
+		if (inputedName == "" || !(inputedName).match(nameReg)) {
+			alert("You must enter a valid name. A name can only contain letters, hyphens, and spaces.");
+			return false;
+		}
+		else if (inputedUsername == "" || !(inputedUsername).match(userNameReg)){
+			alert("Please enter a username. It can only contain letters and numbers. No punctuation or special characters.");
+			return false;
+		}else if (inputedEmail == "" || !(inputedEmail).match(emailReg)){
+			alert("You must enter a valid email. A valid email contains characters before and after '@' and at least two characters after '.'");
+			return false;
+		}else if (inputedPassword == "" || !(inputedPassword).match(passwordReg)){
+			alert("Your password must contain 6 or more characters");
+			return false;
+		}else if (inputedProfilePicture == ""){
+			alert("You must provide a profile picture");
+			return false;
+		}else if (inputedSecurityResponse == ""){
+			alert("Please provide an answer for the security question");
+			return false;
+		}
+		else {
+			alert("Thank you for wanting to volunteer with us! An admin will approve your account later. Please do not fill out another form in the meantime.");
+			window.location.href = "index.html";
+			return true;
+		}
+}
+	</script>
+<!-- NOT LOGGED IN -->  	<script type="text/javascript" src="jsExternal/header_notLoggedIn.txt"></script>
+<!-- isMEMBER LOGGED IN 	<script type="text/javascript" src="jsExternal/header_isMemberLoggedIn.txt"></script>  -->
+<!-- isVOLUNTEER LOGGED IN 	<script type="text/javascript" src="jsExternal/header_isVolunteerLoggedIn.txt"></script>  -->
+<!-- isADMIN LOGGED IN 		<script type="text/javascript" src="jsExternal/header_isAdminLoggedIn.txt"></script>  -->
+</head>
+<body>
+	<script type="text/javascript" src="jsExternal/left-column.txt"></script>
+<main id="volunteerForms">
+	<h1>Volunteer Application Form</h1>
+	<form id="volunteer" name="volunteerApplication" method="post" action="index.html" onsubmit="return checkForm(this);">
+		<fieldset id="volunteerApplication">
+			<legend>Part 1: Volunteer Application</legend>
+			<label>Full Name: </label> <input type="text" name="name" ><br>
+			<label>Year of Study: </label><select name="yearOfStudy">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+			</select><br>
+			<label>Program/Degree: </label> <input type="text" name="program"><br>
+			<label>Why do you want to volunteer with the leftovers club?</label><br>
+			<textarea name="whyVolunteer" form="volunteer" rows=5 cols=65></textarea><br>
+			<label> What is your general availability? </label> <select name="availabilityChoices">
+				<option>Any time</option>
+				<option>Mornings</option>
+				<option>Afternoons</option>
+				<option>Evenings</option>
+				<option>Weekends</option>
+				<option>Limited</option>
+			</select><br>
+			<label> What kind of strengths and skills do you have to contribute to the club? </label><br>
+			<table>
+				<tr>
+					<td><input type="checkbox" name="skills" value="design">Design</td>
+					<td><input type="checkbox" name="skills" value="photography">Photography</td>
+					<td><input type="checkbox" name="skills" value="heavyLifting">Heavy Lifting</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="skills" value="Public speaking">Public speaking</td>
+					<td><input type="checkbox" name="skills" value="quickResponse">Quick response time to messages</td>
+					<td><input type="checkbox" name="skills" value="connections">Connections with on-campus organizations</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="skills" value="adaptable">Ability to adapt to new circumstances</td>
+					<td><input type="checkbox" name="skills" value="marketing">Marketing experience</td>
+					<td><input type="checkbox" name="skills" value="cooking">Cooking</td>
+				</tr>
+				</table>
+			<label> Tells us about any other relevant information (such as time constraints, other skills) </label><br>
+			<textarea name="other" form="volunteer" rows=5 cols=65></textarea><br>
+		</fieldset>
+		<fieldset id="createAccount">
+			<legend>Part 2: Create an Account</legend>
+			<table>
+				<tr>
+					<th><label>User Name: </label></th>
+					<td><input type="text" name="username" title="Can only contain letters and numbers. No punctuation or special characters." ></td>
+				</tr>
+				<tr>
+					<th><label>Email: </label></th>
+					<td><input type="email" name="email" size=40 ></td>
+				</tr>
+				<tr>
+					<th><label>Password: </label></th>
+					<td><input type="password" name="password" size=40  title="Your password must contain 6 or more characters" ></td>
+				</tr>
+				<tr>
+					<th><label>Profile Picture: </label></th>
+					<td><input type="file" name="profilePicture" size=40 title="Please upload a picture so we can verify who you are" accept="image/*" ></td>
+				</tr>
+	 			<tr>
+					 <th><label>Phone Number: </label></th>
+					 <td><input type="text" name="phonenum" size=40 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Must be a 10-digit phone number in the format 123-456-7890"></td>
+				</tr>
+				<tr>
+					<th><label>Choose a security question: </label></th>
+					<td><select name="securityQuestion" required title="This is used to reset your password if you forget it">
+						<option value="Q1" selected>What is the name of your first pet?</option>
+						<option value ="Q2">What was the first name of your childhood best friend?</option>
+					</select><br></td>
+				</tr>
+				<tr>
+					<th><label> Answer for Security Question: </label></th>
+					<td><input type="text" name="securityResponse"  title="Please enter a response to your security question"></td>
+				</tr>
+			</table>
+		</fieldset><br>
+		<input type="reset"><input type="submit" value="Submit">
+	</form>
+	</main>
+  <!-- NOT LOGGED IN  -->	<script type="text/javascript" src="jsExternal/right-column_notLoggedIn.txt"></script>
+  <!-- IS LOGGED IN    		<script type="text/javascript" src="jsExternal/right-column_isLoggedIn.txt"></script> -->
+  <script type="text/javascript" src="jsExternal/footer.txt"></script>
+</body>
+</html>
