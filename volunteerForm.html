@@ -53,6 +53,11 @@
 	<script type="text/javascript" src="jsExternal/left-column.txt"></script>
 <main id="volunteerForms">
 	<h1>Volunteer Application Form</h1>
+
+	<form id="volunteer" method="get" action="index.html">
+		<fieldset id="volunteerApplication">
+			<legend>Part 1: Volunteer Application</legend>
+			<label>Full Name: </label> <input type="text" name="name" required><br>
 	<form id="volunteer" name="volunteerApplication" method="post" action="index.html" onsubmit="return checkForm(this);">
 		<fieldset id="volunteerApplication">
 			<legend>Part 1: Volunteer Application</legend>
@@ -101,6 +106,19 @@
 			<table>
 				<tr>
 					<th><label>User Name: </label></th>
+					<td><input type="text" name="username" pattern="[a-zA-Z0-9]+" title="Can only contain letters and numbers. No punctuation or special characters." required></td>
+				</tr>
+				<tr>
+					<th><label>Email: </label></th>
+					<td><input type="email" name="email" size=40 required></td>
+				</tr>
+				<tr>
+					<th><label>Password: </label></th>
+					<td><input type="password" name="password" size=40 pattern=".{6,}" title="Your password must contain 6 or more characters" required></td>
+				</tr>
+				<tr>
+					<th><label>Profile Picture: </label></th>
+					<td><input type="file" name="profilePicture" size=40 title="Please upload a picture so we can verify who you are" accept="image/*"></td>
 					<td><input type="text" name="username" title="Can only contain letters and numbers. No punctuation or special characters." ></td>
 				</tr>
 				<tr>
@@ -128,6 +146,12 @@
 				</tr>
 				<tr>
 					<th><label> Answer for Security Question: </label></th>
+					<td><input type="text" name="sequrityResponse" required title="Please enter a response to your security question"></td>
+				</tr>
+			</table>
+		</fieldset><br>
+		<input type="reset"><button type="button" onclick="onSubmit()">Submit</button> <!-- TODO: validity check. The required fields aren't checked if they're filled out anymore -->
+
 					<td><input type="text" name="securityResponse"  title="Please enter a response to your security question"></td>
 				</tr>
 			</table>
@@ -139,4 +163,6 @@
   <!-- IS LOGGED IN    		<script type="text/javascript" src="jsExternal/right-column_isLoggedIn.txt"></script> -->
   <script type="text/javascript" src="jsExternal/footer.txt"></script>
 </body>
+
 </html>
+
