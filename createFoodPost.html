@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Create an Event</title>
+	<meta charset = "utf-8">
+	<script>
+	function checkInformation(){
+		var inputedTime = document.forms["makePost"]["safeUntil"].value;
+		var inputedFood = document.forms["makePost"]["typeOfFood"].value;
+		var inputedLocation = document.forms["makePost"]["foodLocation"].value;
+
+
+		if (inputedTime == '') {
+			alert("Please select how much longer the food will last until it can no longer be consumed.");
+			return false;
+		} else if (inputedFood == ''){
+			alert("Tell us what items you picked up.");
+			return false;
+		}
+		else if (inputedTime == ''){
+			alert("Please choose a time for your event.");
+			return false;
+		}else if (inputedLocation == ''){
+			alert("Please type the location of where you left the food.");
+			return false;
+		}
+		else if (inputedDescription == ''){
+			alert("Enter a brief description for the event");
+			return false;
+		}
+		else {
+			return true;
+		}
+}
+	</script>
+<script type="text/javascript" src="jsExternal/header_notLoggedIn.txt"></script>
+</head>
+<body>
+<script type="text/javascript" src="jsExternal/left-column.txt"></script>
+<main>
+	<div id= form>
+	<form id="foodPost" name="makePost" method="post" action="index.html" onsubmit="return checkInformation(this);">
+    <h1>Create a new Food Drop</h1>
+    <p>Please fill out the following details</p>
+    <hr>
+
+		<label>Image of Food</label>
+		<input type="file"  name="foodImage" accept="image/*"><br><br>
+
+    <label>How much longer (in minutes) can the food be consumed until it goes bad? Keep in mind we can only keep food out for 30 minutes until it needs to be refrigerated</label><br>
+		<input type="number" name="safeUntil" size = 50 min="1" max="45"><br><br>
+
+		<label>What food items did you pick up?</label>
+    <input type="text"  name="typeOfFood" size=45><br><br>
+
+		<label>Where are you leaving the food?</label>
+		<input type="text" name="foodLocation" size = 50><br><br>
+
+		<label>Provide an estimate of how much food has been saved in kg</label>
+		<input type="text" name="savedFood" size = 50><br><br>
+
+		<hr>
+		<input type="reset">
+    <input id="postFoodDrop" type="submit" value="Post">
+</form>
+</div>
+</main>
+<script type="text/javascript" src="jsExternal/right-column_isLoggedIn.txt"></script>
+<script type="text/javascript" src="jsExternal/footer.txt"></script>
+</body>
+</html>
