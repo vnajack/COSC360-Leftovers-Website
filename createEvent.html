@@ -3,63 +3,32 @@
 <head>
 	<title>Create an Event</title>
 	<meta charset = "utf-8">
-	<script>
-	function checkInformation(){
-		var inputedTitle = document.forms["makeEvent"]["eventTitle"].value;
-		var inputedDate = document.forms["makeEvent"]["eventDate"].value;
-		var inputedTime = document.forms["makeEvent"]["eventTime"].value;
-		var inputedLocation = document.forms["makeEvent"]["eventLocation"].value;
-		var inputedDescription = document.forms["makeEvent"]["eventDescription"].value;
-
-
-		if (inputedTitle == '') {
-			alert("Please enter a title for your event.");
-			return false;
-		} else if (inputedDate == ''){
-			alert("Please select a date from the calendar to choose the day of the event");
-			return false;
-		}
-		else if (inputedTime == ''){
-			alert("Please choose a time for your event");
-			return false;
-		}else if (inputedLocation == ''){
-			alert("Please type the location for the event. If it has not been selected yet, please type 'TBD' and you can edit it later");
-			return false;
-		}
-		else if (inputedDescription == ''){
-			alert("Enter a brief description for the event");
-			return false;
-		}
-		else {
-			return true;
-		}
-}
-	</script>
+<script type="text/javascript" src="jsExternal/createEventValidation.js"></script>
 	<script type="text/javascript" src="jsExternal/header_isAdminLoggedIn.txt"></script>
 </head>
 <body>
 <script type="text/javascript" src="jsExternal/left-column.txt"></script>
 <main>
-	<form id="event" name="makeEvent" method="post" action="events.html" onsubmit="return checkInformation(this);">
+	<form id="event" name="makeEvent" method="post" action="events.html">
     <h1>Create an Event</h1>
     <p>Please fill in this form to create an event.</p>
     <hr>
 
     <label>Event Title</label>
-    <input type="text" placeholder="Enter a title for the event" name="eventTitle" size=45><br>
+    <input type="text" placeholder="Enter a title for the event" id="title" name="eventTitle" size=45><br>
 
     <label>Poster (optional)</label>
     <input type="file"  name="eventPoster"><br>
 
     <label>Event Day and Time </label><br>
-    <input type="date" name="eventDate">
-		<input type="time" name="eventTime"><br>
+    <input type="date" name="eventDate" id="date">
+		<input type="time" name="eventTime" id="time"><br>
 
 		<label>Event Location</label>
-    <input type="text" placeholder="Where is the event being held?"  name="eventLocation" size=45><br>
+    <input type="text" placeholder="Where is the event being held?"  id="location" name="eventLocation" size=45><br>
 
 		<label>Provide a Description of the Event</label><br>
-		<input type="text" name="eventDescription" size = 50></textarea><br>
+		<input type="text" name="eventDescription" size = 50 id="description"></textarea><br>
 		<hr>
 		<input type="reset">
     <input id="postEvent" type="submit" value="Post New Event">
