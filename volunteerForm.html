@@ -3,47 +3,7 @@
 <head>
 	<title>About Us</title>
 	<meta charset = "utf-8">
-	<script>
-	function checkForm(){
-		var inputedName = document.forms["volunteerApplication"]["name"].value;
-		var inputedUsername = document.forms["volunteerApplication"]["username"].value;
-		var inputedEmail = document.forms["volunteerApplication"]["email"].value;
-		var inputedPassword = document.forms["volunteerApplication"]["password"].value;
-		var inputedProfilePicture = document.forms["volunteerApplication"]["profilePicture"].value;
-		var inputedSecurityResponse = document.forms["volunteerApplication"]["securityResponse"].value;
-
-		nameReg = /[a-zA-Z- ]+/;
-		userNameReg = /[a-zA-Z0-9]+/;
-		passwordReg = /.{6,}/;
-		emailReg = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-
-		if (inputedName == "" || !(inputedName).match(nameReg)) {
-			alert("You must enter a valid name. A name can only contain letters, hyphens, and spaces.");
-			return false;
-		}
-		else if (inputedUsername == "" || !(inputedUsername).match(userNameReg)){
-			alert("Please enter a username. It can only contain letters and numbers. No punctuation or special characters.");
-			return false;
-		}else if (inputedEmail == "" || !(inputedEmail).match(emailReg)){
-			alert("You must enter a valid email. A valid email contains characters before and after '@' and at least two characters after '.'");
-			return false;
-		}else if (inputedPassword == "" || !(inputedPassword).match(passwordReg)){
-			alert("Your password must contain 6 or more characters");
-			return false;
-		}else if (inputedProfilePicture == ""){
-			alert("You must provide a profile picture");
-			return false;
-		}else if (inputedSecurityResponse == ""){
-			alert("Please provide an answer for the security question");
-			return false;
-		}
-		else {
-			alert("Thank you for wanting to volunteer with us! An admin will approve your account later. Please do not fill out another form in the meantime.");
-			window.location.href = "index.html";
-			return true;
-		}
-}
-	</script>
+	<script type="text/javascript" src="jsExternal/volunteerValidation.js"></script>
 <!-- NOT LOGGED IN -->  	<script type="text/javascript" src="jsExternal/header_notLoggedIn.txt"></script>
 <!-- isMEMBER LOGGED IN 	<script type="text/javascript" src="jsExternal/header_isMemberLoggedIn.txt"></script>  -->
 <!-- isVOLUNTEER LOGGED IN 	<script type="text/javascript" src="jsExternal/header_isVolunteerLoggedIn.txt"></script>  -->
@@ -53,10 +13,11 @@
 	<script type="text/javascript" src="jsExternal/left-column.txt"></script>
 <main id="volunteerForms">
 	<h1>Volunteer Application Form</h1>
-	<form id="volunteer" name="volunteerApplication" method="post" action="index.html" onsubmit="return checkForm(this);">
+	<h2> <strong> An asterisk indicates a required field.</strong></h2>
+	<form id="volunteer" name="volunteerApplication" method="post" action="index.html">
 		<fieldset id="volunteerApplication">
 			<legend>Part 1: Volunteer Application</legend>
-			<label>Full Name: </label> <input type="text" name="name" ><br>
+			<label>Full Name*: </label> <input type="text" name="name" ><br>
 			<label>Year of Study: </label><select name="yearOfStudy">
 				<option>1</option>
 				<option>2</option>
@@ -100,19 +61,19 @@
 			<legend>Part 2: Create an Account</legend>
 			<table>
 				<tr>
-					<th><label>User Name: </label></th>
+					<th><label>User Name*: </label></th>
 					<td><input type="text" name="username" title="Can only contain letters and numbers. No punctuation or special characters." ></td>
 				</tr>
 				<tr>
-					<th><label>Email: </label></th>
+					<th><label>Email*: </label></th>
 					<td><input type="email" name="email" size=40 ></td>
 				</tr>
 				<tr>
-					<th><label>Password: </label></th>
+					<th><label>Password*: </label></th>
 					<td><input type="password" name="password" size=40  title="Your password must contain 6 or more characters" ></td>
 				</tr>
 				<tr>
-					<th><label>Profile Picture: </label></th>
+					<th><label>Profile Picture*: </label></th>
 					<td><input type="file" name="profilePicture" size=40 title="Please upload a picture so we can verify who you are" accept="image/*" ></td>
 				</tr>
 	 			<tr>
@@ -127,7 +88,7 @@
 					</select><br></td>
 				</tr>
 				<tr>
-					<th><label> Answer for Security Question: </label></th>
+					<th><label> Answer for Security Question*: </label></th>
 					<td><input type="text" name="securityResponse"  title="Please enter a response to your security question"></td>
 				</tr>
 			</table>
