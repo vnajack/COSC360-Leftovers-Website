@@ -25,16 +25,15 @@
 						<option value="picnic">Picnic</option>
 						<option value="onCampusEvent">On-Campus Event</option>
 						<option value="other">Not Listed as a trusted donor</option>
-					</select></p>
+					</select>
+					<div id = "createTextbox"></div> <!-- NEEDED in order to have dynamic text boxes for "other" and "onCampusEvent" select options -->
 					<p><label>Please list the items that are available to be picked up:<span class="important-notice">*</span></label>
-					<input type="text" name="foodDescription" required></p>
+					<input type="text" name="foodDescription" ></p>
 					<p><label> How much food (in kg) would you estimate that you have?<span class="important-notice">*</span></label>
-					<input type="number" name="kg" min=1 required>
+					<input type="number" name="kg" min=1 >
 					</p>
 					<p><label>When can the food be picked up?<span class="important-notice">*</span></label>
-					<input type="datetime-local" name="pickUpDate" required></p>
-					<p><label>If you aren't already a trusted donor please enter how we can contact you:</label>
-					<input type="text" name="donorContact"></p>
+					<input type="datetime-local" name="pickUpDate"></p>
 				</fieldset>
 				<input type="submit" value="Submit">
 			</form>
