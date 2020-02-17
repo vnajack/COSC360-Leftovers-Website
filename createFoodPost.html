@@ -3,11 +3,11 @@
 <head>
 	<title>Create a Food Post</title>
 	<meta charset = "utf-8">
-	<script type="text/javascript" src="jsExternal/foodPostValidation.js"></script>
-<script type="text/javascript" src="jsExternal/header_notLoggedIn.txt"></script>
+	<script src="jsExternal/foodPostValidation.js"></script>
+<script src="jsExternal/header_notLoggedIn.txt"></script>
 </head>
 <body>
-<script type="text/javascript" src="jsExternal/left-column.txt"></script>
+<script src="jsExternal/left-column.txt"></script>
 <main id="leftoversForm">
 	<form id="foodPost" name="makePost" method="post" action="index.html">
     <h1>Post Leftovers to the Public</h1>
@@ -21,7 +21,7 @@
 				</tr>
 				<tr>
 					<th><label>How much longer (in minutes) will the leftovers be fresh?<span class="important-notice">*</span></label></th>
-					<td><input type="number" name="safeUntil" min="1" max="45"></p></td>
+					<td><input type="number" name="safeUntil" min="1" max="45"></td>
 				</tr>
 				<tr>
 					<td colspan="2"><p class="reminder">Reminder: we can only keep food out for 30 minutes until it needs to be refrigerated or completely eaten unless otherwise indicated by the food donor.</p></td>
@@ -36,14 +36,14 @@
 				</tr>
 				<tr>
 					<th><label>Provide an estimate of how much food has been saved (in kg):</label></th>
-					<td><input type="number" name="savedFood" min=1></th>
+					<td><input type="number" name="savedFood" min=1></td>
 				</tr>
 			</table>
 		</fieldset>
     <input id="postFoodDrop" type="submit" value="Post">
 	</form>
 </main>
-<script type="text/javascript" src="jsExternal/right-column_isLoggedIn.txt"></script>
-<script type="text/javascript" src="jsExternal/footer.txt"></script>
+<script src="jsExternal/right-column_isLoggedIn.txt"></script>
+<script src="jsExternal/footer.txt"></script>
 </body>
 </html>
