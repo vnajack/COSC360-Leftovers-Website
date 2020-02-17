@@ -9,23 +9,20 @@ window.onload = function(){
 
 mainForm.onsubmit = function(e){
   var inputedTitle = document.forms["makeEvent"]["eventTitle"].value;
+  var inputedPoster = document.forms["makeEvent"]["eventPoster"].value;
   var inputedDate = document.forms["makeEvent"]["eventDate"].value;
-  var inputedTime = document.forms["makeEvent"]["eventTime"].value;
-  var inputedLocation = document.forms["makeEvent"]["eventLocation"].value;
   var inputedDescription = document.forms["makeEvent"]["eventDescription"].value;
 
   if (checkBlank(inputedTitle)) {
+    console.log(inputedTitle);
   			alert("Please enter a title for your event.");
   			e.preventDefault();
-  		} else if (inputedDate == ''){
-  			alert("Please select a date from the calendar to choose the day of the event");
+  		} else if(checkBlank(inputedPoster)){
+        alert("Please upload an image of the poster.");
   			e.preventDefault();
-  		}
-  		else if (checkBlank(inputedTime)){
-  			alert("Please choose a time for your event");
-  			e.preventDefault();
-  		}else if (checkBlank(inputedLocation)){
-  			alert("Please type the location for the event. If it has not been selected yet, please type 'TBD' and you can edit it later");
+      }
+      else if (checkBlank(inputedDate)){
+  			alert("Please select the date and time that the event to be held.");
   			e.preventDefault();
   		}
   		else if (checkBlank(inputedDescription)){
