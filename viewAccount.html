@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Account Information</title>
+	<meta charset = "utf-8">
+<script type="text/javascript" src="jsExternal/header_isVolunteerLoggedIn.txt"></script>
+</head>
+<body>
+	<main id="userInfo">
+    <h1> Welcome back, [placeholder for user's name] </h1>
+    <form id="accountInfo" name="accountInformation" method="post" action="#">
+    <table>
+      <tr>
+      <th><label> Username: </label>
+        <td> <input disabled type="text" name="username" placeholder = "placeholder for user's username" size="55"></td>
+        </tr>
+        <tr>
+          <th><label> Name: </label></th>
+            <td> <input  type="text" name="name" placeholder = "placeholder for user's name" size="55"></td>
+          </tr>
+          <tr>
+            <th><label>Year of Study: </label></th>
+            <td><input  type="text" name="yearOfStudy" placeholder = "placeholder for user's year of study" size="55"></td>
+            </tr>
+            <tr>
+              <th><label> Email Address: </label></th>
+                <td> <input type="text" name="email" placeholder = "placeholder for user's email address" size="55"></td>
+              </tr>
+              <tr>
+                <th><label>Program/Degree: </label></th>
+                <td><input type="text" name="program" placeholder="placeholder for user program/degree" size="55"></td>
+              </tr>
+              <tr>
+                <th><label>Password:</label></th>
+      					<td><input type="password" name="password" placeholder="placeholder for user password" size="55"></td>
+              </tr>
+              <tr>
+                <th><label>Profile Picture:</label></th>
+                <td><input type="file" name="profilePicture" accept="image/*" size="55"></td>
+              </tr>
+              <tr>
+        					<th><label>Phone Number:</label></th>
+        					<td><input type="text" name="phonenum"  title="Must be a 10-digit phone number in the format 123-456-7890" size="55"></td>
+        				</tr>
+                <tr><td><input type = "submit" value = "Edit Information"></td></tr>
+              </table>
+              </form>
+            </main>
+            <script type="text/javascript" src="jsExternal/footer.txt"></script>
+          </body>
+          </html>
