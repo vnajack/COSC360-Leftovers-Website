@@ -179,9 +179,13 @@ nav img{
 	}
 
 	.dropdown-content {
-		top: 0;
-		right: 10em;
+		top: inherit;
+		right: 5em;
+		border: 0.25pt solid #203621;
+	}
 
+	.dropdown .dropbtn{
+		color: black;
 	}
 }
 
