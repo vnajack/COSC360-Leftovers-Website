@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang = "en">
 <head>
-	<title>About Us</title>
+	<title>Food Donor Form</title>
 	<meta charset = "utf-8">
 	<script type="text/javascript" src="jsExternal/foodDonorValidation.js"></script>
 <!-- NOT LOGGED IN -->  	<script type="text/javascript" src="jsExternal/header_notLoggedIn.txt"></script>
@@ -11,41 +11,33 @@
 </head>
 <body>
 	<script type="text/javascript" src="jsExternal/left-column.txt"></script>
-	<main>
-			<section id="foodDonor">
-				<form id="foodDonation" name="donorSubmission" method="post" action="index.html"  onsubmit="return checkForm(this);">
-					<fieldset>
-						<legend>Food Donation</legend>
-						<p> Thanks for your donation! <strong>An asterisk indicates a required field.</strong></p>
-						<p>
-							<label> Where is this food coming from?*</label><br>
-							<select id ="donorSection" name = "donor">
-							<option value="sunshine">Sunshine<br>
-							<option value="spoon">Spoon</option>
-							<option value="comma">Comma</option>
-							<option value="picnic">Picnic</option>
-							<option value="onCampusEvent">On-Campus Event</option>
-							<option value="other">Not Listed as a trusted donor</option>
-						</select>
-						<div id = "createTextbox"></div>
-						</p>
-						<p>
-							<label> Please enter the items that are available to be picked up *</label><br>
-							<textarea name="foodDescription" form="foodDonation" rows=5 cols=65></textarea>
-						</p>
-						<p>
-							<label> Please upload an image of the food * </label><input type="file" name="picture" accept="image/*">
-						</p>
-						<p>
-							<label> How much food (in kg) would you estimate that you have? * </label> <input type="text" name="kg">
-						</p>
-						<p>
-							<label> When can the food be picked up?* </label> <input type="date" name="pickUpDate"> <input type="time" name="pickUpTime">
-						</p>
-						<p><input type="reset"> <input type="submit" value="Submit">
-					</fieldset>
-				</form>
-			</section>
+	<main id = "foodDonor">
+		<h1>Food Donation Form</h1>
+		<p><span class="important-notice">An asterisk (*) indicates a required field.</span></p>
+			<form id="foodDonation" name="donorSubmission" method="post" action="index.html"  onsubmit="return checkForm(this);">
+				<fieldset>
+					<p><strong>Once you submit this form, you will be contacted with a time of pick-up.</strong></p>
+					<p><label>Where is this food coming from?<span class="important-notice">*</span></label>
+						<select id ="donorSection" name = "donor">
+						<option value="sunshine">Sunshine<br>
+						<option value="spoon">Spoon</option>
+						<option value="comma">Comma</option>
+						<option value="picnic">Picnic</option>
+						<option value="onCampusEvent">On-Campus Event</option>
+						<option value="other">Not Listed as a trusted donor</option>
+					</select></p>
+					<p><label>Please list the items that are available to be picked up:<span class="important-notice">*</span></label>
+					<input type="text" name="foodDescription" required></p>
+					<p><label> How much food (in kg) would you estimate that you have?<span class="important-notice">*</span></label>
+					<input type="number" name="kg" min=1 required>
+					</p>
+					<p><label>When can the food be picked up?<span class="important-notice">*</span></label>
+					<input type="datetime-local" name="pickUpDate" required></p>
+					<p><label>If you aren't already a trusted donor please enter how we can contact you:</label>
+					<input type="text" name="donorContact"></p>
+				</fieldset>
+				<input type="submit" value="Submit">
+			</form>
 	</main>
   <!-- NOT LOGGED IN  -->	<script type="text/javascript" src="jsExternal/right-column_notLoggedIn.txt"></script>
   <!-- IS LOGGED IN    		<script type="text/javascript" src="jsExternal/right-column_isLoggedIn.txt"></script> -->

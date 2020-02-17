@@ -8,12 +8,12 @@ body{
 }
 h1{
 	font-size: 2em;
-	margin: 0.5em 0 0.5em 0;
+	margin: 0 0 0.5em 0;
 }
 
 h2{
 	font-size: 1.5em;
-	margin: 0.5em 0 0.5em 0;
+	margin: 0 0 0.5em 0;
 }
 
 h3{
@@ -27,6 +27,25 @@ figure figcaption{
 main article{
 	border-top: 1pt solid #8FC33C;
 	padding-top: 0.5em;
+}
+main a{
+	color: #8FC33C;
+	text-decoration: underline;
+}
+main a:hover{
+	text-decoration: none;
+}
+.important-notice{
+	color: red;
+	font-weight: bold;
+}
+.center-text{
+	text-align: center;
+}
+.reminder{
+	font-size: 90%;
+	font-style: italic;
+	margin: 0.5em;
 }
 
 /* ----------------- Header Styling ----------------- */
@@ -132,7 +151,7 @@ nav a:hover, .dropdown:hover .dropbtn, .active {
 nav img{
 	height: 1em;
 }
-@media screen and (max-width: 750px){
+@media screen and (max-width: 760px){
 	.nav-icon{
 		display: initial;
 	}
@@ -191,7 +210,7 @@ nav img{
 
 /* ----------------- Container Styling - contains left sidebar, center column, and right sidebar ----------------- */
 #container{
-	margin: 1em 2em 1em 2em;
+	margin: 1em;
 	display: flex;
 }
 @media screen and (max-width: 900px){
@@ -231,7 +250,7 @@ nav img{
 */
 /* ----------------- Center Column Styling ----------------- */
 #center-column{
-	margin: 0 1em 0 1em;
+	margin: 0 1em 1em 1em;
 	width: 70%;
 	clear: both;
 }
@@ -252,7 +271,8 @@ nav img{
 	color: #8FC33C;
 	text-decoration: none;
 	padding: 0.5em;
-	border: 1.5pt solid white;
+	margin-bottom: 0.5em;
+	border: 1pt solid white;
 	border-radius: 10pt;
 }
 #right-sidebar li a:hover{
@@ -312,13 +332,14 @@ footer h1{
 #last-edited{
 	font-size: 0.8em;
 }
-/* ----------------- index findLeftovers ----------------- */
+
+/* ----------------- index (AKA Find Leftovers) ----------------- */
 #findLeftovers figure{
 	margin: 0
 }
-#findLeftovers img{
+#findLeftovers img, #eventsList img{
   height: auto;
-  max-width: 25em; 
+  width: 25em;
 }
 #findLeftovers figcaption{
 	font-weight: bold;
@@ -331,49 +352,89 @@ footer h1{
 	border-radius: 20pt;
 	vertical-align: middle;
 }
+@media screen and (max-width: 760px){
+	#findLeftovers img, #eventsList img{
+	  height: auto;
+	  width: 15em;
+	}
+	.time-remaining{
+		display: inline-block;
+	}
+}
 
 /* ----------------- eventsList ----------------- */
+#upcomingEvents{
+	padding: 1em;
+}
 #pastEvents{
-	
+	padding: 1em;
 	background-color: #f2f2f2;
 	border: 2pt solid #f2f2f2;
 	border-radius: 15pt;
 }
 
 /* ----------------- memberList ----------------- */
-
-#memberList{
-	overflow: scroll;
+#memberList table{
+	margin: 1em;
+	border-collapse: collapse;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 }
 #memberList th{
 	width: auto;
 	height: 2em;
 	white-space: nowrap;
+	background-color: #8FC33C;
+	padding: 0 1em;
+}
+#memberList tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+#memberList #profilePic{
+	width: auto;
+	height: 64px;
+}
+
+#memberList{
+	overflow: auto;
+}
+#memberList th{
+
 }
 #editDelete img{
 	max-height: 16px;
 }
 /* ----------------- Forms ----------------- */
-input[type=text]:focus, input[type=password]:focus, textarea:focus, select:focus, input[type=checkbox]:focus, input[type=radio]:focus{
+input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, textarea:focus, select:focus, input[type=checkbox]:focus, input[type=radio]:focus, input[type=number]:focus{
 	outline: 1px solid #8FC33C;
 	border-radius: 4px;
 }
 
-#loginPage form{
-	border-radius: 5px;
+input[type=text], textarea, input[type=email], input[type=password], input[type=number], select {
+	padding: 0.5em;
+	border-radius: 0;
+}
+
+fieldset{
 	background-color: #f2f2f2;
-	padding: 1.5em;
-	max-width: 15em;
+	border: none;
+	border-radius: 5pt;
+	padding: 0 1em 1em 1em;
+	margin-bottom: 1em;
+	width: inherit;
+}
+
+fieldset table{
 	margin-left: auto;
 	margin-right: auto;
 }
-#loginPage th{
-	vertical-align: middle;
+
+fieldset textarea{
+	width: 95%;
 }
-#loginPage input{
-	margin-bottom: 1em;
-}
-#loginPage input[type=submit]{
+
+input[type=submit]{
 	width: 100%;
 	display: inline-block;
 	padding-top: 0.5em;
@@ -385,40 +446,61 @@ input[type=text]:focus, input[type=password]:focus, textarea:focus, select:focus
 	box-sizing: border-box;
 	margin-bottom: 0;
 }
+
+input[type=submit]:hover{
+	background-color: #8FC33C;
+	border-color: #8FC33C;
+}
+
+#loginPage form{
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 1.5em;
+	max-width: 15em;
+	margin-left: auto;
+	margin-right: auto;
+}
+#loginPage h2{
+	text-align: center;
+	font-size: 1.25em;
+}
+#loginPage th{
+	vertical-align: middle;
+}
+#loginPage input{
+	margin-bottom: 1em;
+}
 #loginPage input[type=text], input[type=password]{
 	padding: 0.5em 0 0.5em 0;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	box-sizing: border-box;
 }
-#loginPage input[type=submit]:hover{
-	background-color: #8FC33C;
-	border-color: #8FC33C;
+
+.tableFieldset table{
+	border-collapse: collapse;
 }
 
-.flex-container{
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: flex-start;
+.tableFieldset th{
+	text-align: left;
+	font-weight: normal;
+	min-width: 6em;
 }
 
-#volunteerForms form{
-	width: 100%;
-	background-color: #f2f2f2;
-	border-radius: 5pt;
-	padding: 0 1em 0 1em;
-}
-#volunteerForms label{
-	display: block;
-}
-#volunteerForms input[type=text], #volunteerForms textarea, #volunteerForms input[type=email], #volunteerForms input[type=password] {
-	padding: 0.5em;
+.tableFieldset input{
 	width: 95%;
 }
-#volunteerForms select{
+
+.tableFieldset input[type=password]{
 	width: 100%;
 }
-#volunteerForms input[type=text], #volunteerForms select, #volunteerForms input[type=checkbox], #volunteerForms textarea, #volunteerForms input[type=email], #volunteerForms input[type=password] {
-	margin-bottom: 1em;
-}
 
+@media screen and (max-width: 760px){
+	.tableFieldset select{
+		width: 15em;
+		overflow: hidden;
+		white-space: normal;
+	}
+}
+#leftoversForm th{
+}

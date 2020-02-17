@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang = "en">
 <head>
-	<title>About Us</title>
+	<title>Volunteer Form</title>
 	<meta charset = "utf-8">
 	<script type="text/javascript" src="jsExternal/volunteerValidation.js"></script>
 <!-- NOT LOGGED IN -->  	<script type="text/javascript" src="jsExternal/header_notLoggedIn.txt"></script>
@@ -13,30 +13,31 @@
 	<script type="text/javascript" src="jsExternal/left-column.txt"></script>
 <main id="volunteerForms">
 	<h1>Volunteer Application Form</h1>
-	<h2> <strong> An asterisk indicates a required field.</strong></h2>
+	<p><span class="important-notice"> An asterisk (*) indicates a required field.</span></p>
 	<form id="volunteer" name="volunteerApplication" method="post" action="index.html">
 		<fieldset id="volunteerApplication">
-			<legend>Part 1: Volunteer Application</legend>
-			<label>Full Name*: </label> <input type="text" name="name" ><br>
-			<label>Year of Study: </label><select name="yearOfStudy">
+			<h2>Part 1: Volunteer Application</h2>
+			<p>This part of the form tells us about who you are</p>
+			<p><label>Full Name:<span class="important-notice">*</span> </label> <input type="text" name="name" title="Full name" autofocus required></p>
+			<p><label>Year of Study: </label><select name="yearOfStudy" title="Year of Study">
 				<option>1</option>
 				<option>2</option>
 				<option>3</option>
 				<option>4</option>
-				<option>5</option>
-			</select><br>
-			<label>Program/Degree: </label> <input type="text" name="program"><br>
-			<label>Why do you want to volunteer with the leftovers club?</label><br>
-			<textarea name="whyVolunteer" form="volunteer" rows=5 cols=65></textarea><br>
-			<label> What is your general availability? </label> <select name="availabilityChoices">
+				<option>5+</option>
+			</select></p>
+			<p><label>Program/Degree: </label> <input type="text" name="program" title="Program/Degree"></p>
+			<p><label>Why do you want to volunteer with the Leftovers club?<span class="important-notice">*</span></label><br>
+			<textarea name="whyVolunteer" form="volunteer" title="Why do you want to volunteer?" rows=5 required></textarea></p>
+			<p><label>What is your general availability? </label> <select name="availabilityChoices" title="What is your general availability">
 				<option>Any time</option>
 				<option>Mornings</option>
 				<option>Afternoons</option>
 				<option>Evenings</option>
 				<option>Weekends</option>
 				<option>Limited</option>
-			</select><br>
-			<label> What kind of strengths and skills do you have to contribute to the club? </label><br>
+			</select></p>
+			<p><label>What kind of strengths and skills do you have to contribute to the club? </label>
 			<table>
 				<tr>
 					<td><input type="checkbox" name="skills" value="design">Design</td>
@@ -54,46 +55,48 @@
 					<td><input type="checkbox" name="skills" value="cooking">Cooking</td>
 				</tr>
 				</table>
-			<label> Tells us about any other relevant information (such as time constraints, other skills) </label><br>
-			<textarea name="other" form="volunteer" rows=5 cols=65></textarea><br>
+			</p>
+			<p><label> Tells us about any other relevant information (such as time constraints, other skills, or anything else you want to share) </label><br>
+			<textarea name="other" form="volunteer" title="Tell us more" rows=5></textarea></p>
 		</fieldset>
 		<fieldset id="createAccount">
-			<legend>Part 2: Create an Account</legend>
-			<table>
+			<h2>Part 2: Create an Account</h2>
+			<p>Once your volunteer application is accepted you can log in using the credentials you choose here.</p>
+			<table class="tableFieldset">
 				<tr>
-					<th><label>User Name*: </label></th>
-					<td><input type="text" name="username" title="Can only contain letters and numbers. No punctuation or special characters." ></td>
+					<th><label>Username: <span class="important-notice">*</span></label></th>
+					<td><input type="text" name="username" title="Can only contain letters and numbers. No punctuation or special characters." required></td>
 				</tr>
 				<tr>
-					<th><label>Email*: </label></th>
-					<td><input type="email" name="email" size=40 ></td>
+					<th><label>Email:<span class="important-notice">*</span></label></th>
+					<td><input type="email" name="email" required></td>
 				</tr>
 				<tr>
-					<th><label>Password*: </label></th>
-					<td><input type="password" name="password" size=40  title="Your password must contain 6 or more characters" ></td>
+					<th><label>Password:<span class="important-notice"></span></label></th>
+					<td><input type="password" name="password" title="Your password must contain 6 or more characters" required></td>
 				</tr>
 				<tr>
-					<th><label>Profile Picture*: </label></th>
-					<td><input type="file" name="profilePicture" size=40 title="Please upload a picture so we can verify who you are" accept="image/*" ></td>
-				</tr>
-	 			<tr>
-					 <th><label>Phone Number: </label></th>
-					 <td><input type="text" name="phonenum" size=40 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Must be a 10-digit phone number in the format 123-456-7890"></td>
+					<th><label>Profile Picture:<span class="important-notice">*</span></label></th>
+					<td><input type="file" name="profilePicture" title="Please upload a picture so we can verify who you are" accept="image/*" required></td>
 				</tr>
 				<tr>
-					<th><label>Choose a security question: </label></th>
-					<td><select name="securityQuestion" required title="This is used to reset your password if you forget it">
+					<th><label>Phone Number:</label></th>
+					<td><input type="text" name="phonenum" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Must be a 10-digit phone number in the format 123-456-7890"></td>
+				</tr>
+				<tr>
+					<th><label>Choose a security question:<span class="important-notice">*</span></label></th>
+					<td><select name="securityQuestion" title="This is used to reset your password if you forget it" required>
 						<option value="Q1" selected>What is the name of your first pet?</option>
 						<option value ="Q2">What was the first name of your childhood best friend?</option>
-					</select><br></td>
+					</select></td>
 				</tr>
 				<tr>
-					<th><label> Answer for Security Question*: </label></th>
-					<td><input type="text" name="securityResponse"  title="Please enter a response to your security question"></td>
+					<th><label>Answer for security question:<span class="important-notice">*</span></label></th>
+					<td><input type="text" name="securityResponse"  title="Please enter a response to your security question" required></td>
 				</tr>
 			</table>
-		</fieldset><br>
-		<input type="reset"><input type="submit" value="Submit">
+		</fieldset>
+		<input type="submit" value="Submit">
 	</form>
 	</main>
   <!-- NOT LOGGED IN  -->	<script type="text/javascript" src="jsExternal/right-column_notLoggedIn.txt"></script>
