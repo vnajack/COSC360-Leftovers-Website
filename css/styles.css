@@ -57,118 +57,132 @@ header h1{
 }*/
 
 /* ----------------- Navigation Bar Styling ----------------- */
-nav{
+.top-sticky{
 	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
 }
-nav ul{
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: #203621;
+nav {
+  overflow: hidden;
+  background-color: #203621;
+	height: 50px;
 }
-nav li{
-	float: left;
-}
-nav .float-right{
-	float: right;
-}
-/* Regular links and dropdown button */
-nav li a, .dropbtn{
-	display: block;
-	color: white;
-	text-align: center;
-	padding: 1em 1em;
-	text-decoration: none;
-	border: 2pt solid #203621;
-}
-/* hover style but doesn't affect active */
-nav li a:hover, nav li a:hover:not(.active){
-	border: 2pt solid #8FC33C;
-	background-color: #8FC33C;
-	color: white;
-}
-/* active style */
-nav li .active{
-	border: 2pt solid #8FC33C;
-	background-color: #8FC33C;
-	color: white;
-}
-/* position the dropdown content */
-nav li.dropdown{
-	display: inline-block;
-}
-/* hidden by default */
-nav .dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f9f9f9;
-	z-index: 1;
-}
-/* links inside the dropdown */
-nav .dropdown-content a{
-	text-align: left;
-	padding: 0.5em 0.5em;
-	color: #203621;
-	border: 2pt solid #f9f9f9;
-}
-/* shows dropdown on hover */
-nav .dropdown:hover .dropdown-content{
-	display: block;
-}
-nav .dropdown:hover .dropbtn{
-	border: 2pt solid #8FC33C;
-	background-color: #8FC33C;
+.float-right{
+  float: right;
 }
 
-/* when screen gets smaller, a menu button will appear. hidden by default */
-.main-nav-btn{
+nav a {
+  float: left;
+  font-size: 1em;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  text-decoration: none;
+}
+
+.dropdown {
+	float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 1em;
+  color: white;
+  padding: 1em;
+  margin: 0;
+}
+
+nav a:hover, .dropdown:hover .dropbtn, .active {
+  background-color: #8FC33C;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+	top: 50px;
+  background-color: #f2f2f2;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 1em;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #8FC33C;
+  color: white;
+  min-width: 8em;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.main-nav-dropdown{
+	height: 50px;
+	overflow: hidden;
+}
+.nav-icon{
 	display: none;
 }
 nav img{
 	height: 1em;
 }
-
 @media screen and (max-width: 600px){
-	
-	nav{
-		position: initial;
-	}
-	
-	nav li, nav .float-right{
-		float: none;
-	}
-	
-	nav li, nav li.dropdown{
-		display: block;
-	}
-
-	/* Not sure how to get this to work
-	.main-nav-btn{
+	.nav-icon{
 		display: initial;
 	}
-	
+
+	.main-nav-dropdown {
+		float: left;
+	  overflow: hidden;
+	}
+
+	.main-nav-dropdown .nav-icon {
+	  font-size: 1em;
+	  color: white;
+	  padding: 1em;
+	  margin: 0;
+	}
+
 	.main-nav {
-		display: none;
-		position: absolute;
-		background-color: #f9f9f9;
-		z-index: 1;
+	  display: none;
+	  position: absolute;
+		top: 50px;
+		right: 0;
+	  background-color: #f2f2f2;
+	  z-index: 1;
 	}
-	
-	.main-nav a{
-		text-align: left;
-		padding: 0.5em 0.5em;
-		color: #203621;
-		border: 2pt solid #f9f9f9;
+
+	.main-nav a {
+	  float: none;
+		clear: both;
+	  color: black;
+	  padding: 1em;
+	  text-decoration: none;
+	  display: block;
+	  text-align: left;
+		min-width: 8em;
 	}
-	
-	.main-nav-btn:hover .main-nav{
-		display: block;
+
+	.main-nav a:hover {
+	  background-color: #8FC33C;
+	  color: white;
 	}
-	*/
-	
+
+	.main-nav-dropdown:hover .main-nav {
+	  display: block;
+	}
+
+	.dropdown-content {
+		top: 0;
+		right: 10em;
+
+	}
 }
 
 /* ----------------- Container Styling - contains left sidebar, center column, and right sidebar ----------------- */
