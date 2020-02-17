@@ -353,3 +353,72 @@ footer h1{
 #editDelete img{
 	max-height: 16px;
 }
+/* ----------------- Forms ----------------- */
+input[type=text]:focus, input[type=password]:focus, textarea:focus, select:focus, input[type=checkbox]:focus, input[type=radio]:focus{
+	outline: 1px solid #8FC33C;
+	border-radius: 4px;
+}
+
+#loginPage form{
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 1.5em;
+	max-width: 15em;
+	margin-left: auto;
+	margin-right: auto;
+}
+#loginPage th{
+	vertical-align: middle;
+}
+#loginPage input{
+	margin-bottom: 1em;
+}
+#loginPage input[type=submit]{
+	width: 100%;
+	display: inline-block;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	color: white;
+	background-color: #203621;
+	border: 1px solid #203621;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-bottom: 0;
+}
+#loginPage input[type=text], input[type=password]{
+	padding: 0.5em 0 0.5em 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+#loginPage input[type=submit]:hover{
+	background-color: #8FC33C;
+	border-color: #8FC33C;
+}
+
+.flex-container{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+}
+
+#volunteerForms form{
+	width: 100%;
+	background-color: #f2f2f2;
+	border-radius: 5pt;
+	padding: 0 1em 0 1em;
+}
+#volunteerForms label{
+	display: block;
+}
+#volunteerForms input[type=text], #volunteerForms textarea, #volunteerForms input[type=email], #volunteerForms input[type=password] {
+	padding: 0.5em;
+	width: 95%;
+}
+#volunteerForms select{
+	width: 100%;
+}
+#volunteerForms input[type=text], #volunteerForms select, #volunteerForms input[type=checkbox], #volunteerForms textarea, #volunteerForms input[type=email], #volunteerForms input[type=password] {
+	margin-bottom: 1em;
+}
+
