@@ -11,26 +11,26 @@ window.onload = function(){
 
 
   mainForm.onsubmit = function(e){
-  var inputedImage = document.forms["makePost"]["foodImage"].value;
-  var inputedTime = document.forms["makePost"]["safeUntil"].value;
-  var inputedFood = document.forms["makePost"]["typeOfFood"].value;
-  var inputedLocation = document.forms["makePost"]["foodLocation"].value;
-  var inputedSource = document.forms["makePost"]["source"].value;
+  var inputtedImage = document.forms["makePost"]["foodImage"].value;
+  var inputtedTime = document.forms["makePost"]["safeUntil"].value;
+  var inputtedFood = document.forms["makePost"]["typeOfFood"].value;
+  var inputtedLocation = document.forms["makePost"]["foodLocation"].value;
+  var inputtedSource = document.forms["makePost"]["source"].value;
 
 
-  if (checkBlank(inputedImage)){
+  if (checkBlank(inputtedImage)){
     alert("Please provide an image of the leftovers.");
     e.preventDefault();
-  }else if (checkBlank(inputedTime)) {
+  }else if (checkBlank(inputtedTime)) {
     alert("Please select how much longer the leftovers will be fresh. This is the length of time until it can no longer be consumed safely (unless otherwise indicated by the food donor.");
     e.preventDefault();
-  } else if (checkBlank(inputedFood)){
+  } else if (checkBlank(inputtedFood)){
     alert("Please list the food items you picked up.");
     e.preventDefault();
-  }else if (checkBlank(inputedLocation)){
+  }else if (checkBlank(inputtedLocation)){
     alert("Please indicate where you are taking the leftovers.");
     e.preventDefault();
-  }else if(checkBlank(inputedSource)){
+  }else if(checkBlank(inputtedSource)){
     alert("Please provide the source of the leftovers.");
     e.preventDefault();
   }else {
