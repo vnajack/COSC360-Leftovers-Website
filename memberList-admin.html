@@ -3,69 +3,69 @@
 <head>
 	<title>Member List</title>
 	<meta charset = "utf-8">
-<!-- isADMIN LOGGED IN 	-->	<script type="text/javascript" src="jsExternal/header_isAdminLoggedIn.txt"></script>
+<!-- isADMIN LOGGED IN 	-->	<script src="jsExternal/header_isAdminLoggedIn.txt"></script>
 </head>
 <body>
 	<main id="memberList">
 		<table>
 		<tr>
-			<th scope="col">Picture</th>
-			<th scope="col">Name</th>
-			<th scope="col">Phone Number</th>
-			<th scope="col">Email</th>
-			<th scope="col">Program/Degree</th>
-			<th scope="col">Year of Study</th>
-			<th scope="col">Availability</th>
-			<th scope="col">Reason for Joining</th>
-			<th scope="col">Strengths</th>
-			<th scope="col">Other Information</th>
-			<th scope="col">Member Type</th>
-			<th scope="col">Edit/Delete</th>
+			<th scope="col" id="profilePic">Picture</th>
+			<th scope="col" id="fullName">Name</th>
+			<th scope="col" id="phoneNum">Phone Number</th>
+			<th scope="col" id="email">Email</th>
+			<th scope="col" id="program">Program/Degree</th>
+			<th scope="col" id="yearOfStudy">Year of Study</th>
+			<th scope="col" id="availability">Availability</th>
+			<th scope="col" id="reason">Reason for Joining</th>
+			<th scope="col" id="skills">Strengths</th>
+			<th scope="col" id="more">Other Information</th>
+			<th scope="col" id="memberType">Member Type</th>
+			<th scope="col" id="editDelete">Edit/Delete</th>
 		</tr>
 		<tr>
-			<td id="profilePic"><img src="images/icons8-person-64.png"></td>
-			<td id="fullName">Jane Doe</td>
-			<td id="phoneNum">123-123-1234</td>
-			<td id="email">jane.doe@alumni.ubc.ca</td>
-			<td id="program">Bachelor of Commerce</td>
-			<td id="yearOfStudy">3</td>
-			<td id="availability">Afternoons</td>
-			<td id="reason">I want to help reduce food waste. I also like free food!</td>
-			<td id="skills">Heavy Lifting, Public Speaking</td>
-			<td id="more">If possible, I would like to help with marketing and social media</td>
-			<td id="memberType">Basic</td>
-			<td id="editDelete"><a href="#"><img src="images/icons8-edit-30.png"></a><a href="#"><img src="images/icons8-delete-48.png"></a></td>
+			<td><img src="images/icons8-person-64.png" alt="Profile Picture"></td>
+			<td>Jane Doe</td>
+			<td>123-123-1234</td>
+			<td>jane.doe@alumni.ubc.ca</td>
+			<td>Bachelor of Commerce</td>
+			<td>3</td>
+			<td>Afternoons</td>
+			<td>I want to help reduce food waste. I also like free food!</td>
+			<td>Heavy Lifting, Public Speaking</td>
+			<td>If possible, I would like to help with marketing and social media</td>
+			<td>Basic</td>
+			<td><a href="#"><img src="images/icons8-edit-30.png" alt="Edit Icon"></a><a href="#"><img src="images/icons8-delete-48.png" alt="Delete Icon"></a></td>
 		</tr>
 		<tr>
-			<td id="profilePic"><img src="images/icons8-person-64.png"></td>
-			<td id="fullName">Jesse</td>
-			<td id="phoneNum">234-234-2345</td>
-			<td id="email">jesse@alumni.ubc.ca</td>
-			<td id="program">Program Name</td>
-			<td id="yearOfStudy">3</td>
-			<td id="availability">Any time</td>
-			<td id="reason">Reason for joinin here</td>
-			<td id="skills">Here are my strengths</td>
-			<td id="more">I wrote something here</td>
-			<td id="memberType">Volunteer</td>
-			<td id="editDelete"><a href="#"><img src="images/icons8-edit-30.png"></a><a href="#"><img src="images/icons8-delete-48.png"></a></td>
+			<td><img src="images/icons8-person-64.png" alt="Profile Picture"></td>
+			<td>Jesse LastName</td>
+			<td>234-234-2345</td>
+			<td>jesse.lastname@alumni.ubc.ca</td>
+			<td>Program Name</td>
+			<td>3</td>
+			<td>Any time</td>
+			<td>Reason for joinin here</td>
+			<td>Here are my strengths</td>
+			<td>I wrote something here</td>
+			<td>Volunteer</td>
+			<td><a href="#"><img src="images/icons8-edit-30.png" alt="Edit Icon"></a><a href="#"><img src="images/icons8-delete-48.png" alt="Delete Icon"></a></td>
 		</tr>
 		<tr>
-			<td id="profilePic"><img src="images/icons8-person-64.png"></td>
-			<td id="fullName">Samantha S</td>
-			<td id="phoneNum">456-456-4567</td>
-			<td id="email">samantha@alumni.ubc.ca</td>
-			<td id="program">Program</td>
-			<td id="yearOfStudy">4</td>
-			<td id="availability">Any time</td>
-			<td id="reason">This is my reason for joining</td>
-			<td id="skills">Strengths listed here</td>
-			<td id="more">Here is some other information</td>
-			<td id="memberType">Admin</td>
-			<td id="editDelete"><figure id="editDelete"><a href="#"><img src="images/icons8-edit-30.png"></a><a href="#"><img src="images/icons8-delete-48.png"></a></figure></td>
+			<td><img src="images/icons8-person-64.png" alt="Profile Picture"></td>
+			<td>Samantha S</td>
+			<td>456-456-4567</td>
+			<td>samantha@alumni.ubc.ca</td>
+			<td>Program</td>
+			<td>4</td>
+			<td>Any time</td>
+			<td>This is my reason for joining</td>
+			<td>Strengths listed here</td>
+			<td>Here is some other information</td>
+			<td>Admin</td>
+			<td><a href="#"><img src="images/icons8-edit-30.png" alt="Edit Icon"></a><a href="#"><img src="images/icons8-delete-48.png" alt="Delete Icon"></a></td>
 		</tr>
 		</table>
 	</main>
-  <script type="text/javascript" src="jsExternal/footer.txt"></script>
+  <script src="jsExternal/footer.txt"></script>
 </body>
 </html>
