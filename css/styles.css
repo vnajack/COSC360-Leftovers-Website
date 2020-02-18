@@ -19,7 +19,7 @@ h2{
 h3{
 	font-size: 1em;
 	font-weight: bold;
-	margin: 0.5em 0 0.5em 0;
+	margin: 0em 0 0.5em 0;
 }
 figure figcaption{
 	font-style: italic;
@@ -151,7 +151,324 @@ nav a:hover, .dropdown:hover .dropbtn, .active {
 nav img{
 	height: 1em;
 }
+
+/* ----------------- Container Styling - contains left sidebar, center column, and right sidebar ----------------- */
+#container{
+	margin: 1em;
+	display: flex;
+}
+
+/* ----------------- Left Sidebar Styling ----------------- */
+#left-sidebar{
+	min-width: 10em;
+	width: 20%;
+}
+#left-sidebar .img-fluid{
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+#left-sidebar figure{
+	margin: 0;
+}
+
+/* ----------------- Center Column Styling ----------------- */
+#center-column{
+	margin: 0 1em;
+	width: 100%;
+	clear: both;
+}
+/* ----------------- Right Sidebar Styling ----------------- */
+#right-sidebar{
+	min-width: 10em;
+	width: 30%;
+}
+#right-sidebar h1{
+	margin-bottom: 0.25em;
+}
+#right-sidebar ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+#right-sidebar li a{
+	display: inline-block;
+	color: #8FC33C;
+	text-decoration: none;
+	padding: 0.5em;
+	margin-bottom: 0.5em;
+	border: 1pt solid white;
+	border-radius: 10pt;
+}
+#right-sidebar li a:hover{
+	border: 1pt solid #8FC33C;
+	border-radius: 10pt;
+	color: white;
+    background-color: #8FC33C;
+}
+#right-sidebar li .active{
+	border: 1pt solid #8FC33C;
+	border-radius: 10pt;
+	color: white;
+    background-color: #8FC33C;
+}
+
+
+/* ----------------- Footer Section Styling ----------------- */
+
+footer{
+	position: relative;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #203621;
+	color: white;
+	width: 100%;
+}
+footer h1{
+	font-size: 1.5em;
+	text-align: left;
+	border-top: 1pt solid #8FC33C;
+	padding-top: 0.5em;
+}
+
+#footer-container{
+	display: flex;
+	justify-content: left;
+	padding: 1em;
+}
+#footer-left{
+	width: 20%;
+	margin: 0 1em 0 1em;
+}
+#footer-main{
+	width: 70%;
+	margin-right: 1em;
+}
+#footer-left img{
+	vertical-align: middle;
+	margin: 0 0.5em 0.5em 0;
+	max-height: 3em;
+	width: auto;
+}
+#footer-main p{
+	text-align: left;
+	width: 80%;
+}
+#last-edited{
+	font-size: 0.8em;
+}
+
+/* ----------------- index (AKA Find Leftovers) ----------------- */
+#findLeftovers figure{
+	margin: 0
+}
+#findLeftovers img, #eventsList img{
+  height: auto;
+  width: 25em;
+}
+#findLeftovers figcaption{
+	font-weight: bold;
+}
+#findLeftovers .time-remaining{
+	font-size: 0.5em;
+	padding: 0.7em;
+	background-color: #f2f2f2;
+	border: 1pt #f2f2f2 solid;
+	border-radius: 20pt;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+/* ----------------- eventsList ----------------- */
+#upcomingEvents{
+	padding: 0 1em;
+}
+#pastEvents{
+	padding: 1em 1em 0 1em;
+	background-color: #f2f2f2;
+	border: 2pt solid #f2f2f2;
+	border-radius: 15pt;
+}
+
+/* ----------------- memberList ----------------- */
+#memberList table{
+	margin: 1em;
+	border-collapse: collapse;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+#memberList th{
+	width: auto;
+	height: 2em;
+	white-space: nowrap;
+	background-color: #8FC33C;
+	padding: 0 1em;
+}
+#memberList tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+#memberList #profilePic{
+	width: auto;
+	height: 64px;
+}
+
+#memberList{
+	overflow: auto;
+}
+#memberList th{
+
+}
+#editDelete img{
+	max-height: 16px;
+}
+/* ----------------- Forms ----------------- */
+#loginPage form{
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 1.5em;
+	max-width: 15em;
+	margin-left: auto;
+	margin-right: auto;
+}
+#loginPage h2{
+	text-align: center;
+	font-size: 1.25em;
+}
+#loginPage th{
+	vertical-align: middle;
+}
+#loginPage input{
+	margin-bottom: 1em;
+}
+#loginPage input[type=text], #loginPage input[type=password]{
+	padding: 0.5em 0 0.5em 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+#viewAccount th{
+	font-weight: bold;
+}
+#viewAccount input[type=submit]{
+	margin-top: 1em;
+}
+
+.tableFieldset table{
+	border-collapse: collapse;
+}
+
+.tableFieldset th{
+	text-align: left;
+	font-weight: normal;
+	min-width: 6em;
+}
+
+.tableFieldset input{
+	width: 95%;
+}
+
+input:focus, textarea:focus, select:focus{
+	outline: 1px solid #8FC33C;
+	border-radius: 4px;
+}
+
+input, textarea, select{
+	padding: 0.5em;
+	border-radius: 0;
+}
+
+input[type=file]{
+	padding: 0.5em 0;
+}
+
+input[type=checkbox]{
+	width: 1em;
+	height: 1em;
+}
+
+fieldset{
+	background-color: #f2f2f2;
+	border: none;
+	border-radius: 5pt;
+	padding: 1em;
+	margin-bottom: 1em;
+	width: inherit;
+}
+
+fieldset table{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+fieldset textarea{
+	width: 95%;
+}
+
+input[type=submit], #getCredentials a{
+	width: 100%;
+	display: inline-block;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	color: white;
+	background-color: #203621;
+	border: 1px solid #203621;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-bottom: 0;
+	text-decoration: none;
+	text-align: center;
+}
+
+input[type=submit]:hover, #getCredentials a:hover{
+	background-color: #8FC33C;
+	border-color: #8FC33C;
+}
+
+/* ----------------- getCredentials ----------------- */
+#getCredentials table{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1em;
+}
+
+#getCredentials tbody{
+	background-color: #f2f2f2;
+}
+
+#getCredentials tfoot{
+	padding: 0.5em;
+	background-color: none;
+	border-radius: 5pt;
+}
+
+#getCredentials th{
+	padding: 1em;
+	background-color: #8FC33C;
+	border-radius: 5pt;
+}
+
+#getCredentials td{
+	padding: 1em;
+	border-radius: 5pt;
+}
+
+/* ----------------- viewAccount ----------------- */
+#viewAccount img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1em;
+	width: 64px;
+	height: auto;
+	text-align: center;
+}
+
+/* ----------------- Responsive Design ----------------- */
 @media screen and (max-width: 760px){
+	/* ----- NAVIGATION ----- */
 	.nav-icon{
 		display: initial;
 	}
@@ -206,301 +523,30 @@ nav img{
 	.dropdown .dropbtn{
 		color: black;
 	}
-}
-
-/* ----------------- Container Styling - contains left sidebar, center column, and right sidebar ----------------- */
-#container{
-	margin: 1em;
-	display: flex;
-}
-@media screen and (max-width: 900px){
-  /* some CSS here */
+	/* ----- CONTAINER AND SECTIONS ----- */
   #container{
   flex-wrap: wrap;
   }
-}
-@media screen and (max-width: 400px){
-  #container{
-  /*do something */
-  }
-}
 
-
-
-/* ----------------- Left Sidebar Styling ----------------- */
-#left-sidebar{
-	min-width: 10em;
-	width: 15%;
-	margin: 0 1em 0 1em;
-}
-#left-sidebar .img-fluid{
-	width: 100%;
-	height: auto;
-	object-fit: contain;
-}
-#left-sidebar figure{
-	margin: 0;
-}
-/*TODO: do we want this to disappear when it gets too small?
-@media screen and (max-width: 900px){
-  #left-sidebar article{
-  display: none;
-  }
-}
-*/
-/* ----------------- Center Column Styling ----------------- */
-#center-column{
-	margin: 0 1em 1em 1em;
-	width: 70%;
-	clear: both;
-}
-
-/* ----------------- Right Sidebar Styling ----------------- */
-
-#right-sidebar{
-	min-width: 10em;
-	width: 15%;
-	margin: 0 1em 0 1em;
-}
-#right-sidebar ul{
-	list-style-type: none;
-	padding: 0;
-}
-#right-sidebar li a{
-	display: inline-block;
-	color: #8FC33C;
-	text-decoration: none;
-	padding: 0.5em;
-	margin-bottom: 0.5em;
-	border: 1pt solid white;
-	border-radius: 10pt;
-}
-#right-sidebar li a:hover{
-	border: 1pt solid #8FC33C;
-	border-radius: 10pt;
-	color: white;
-    background-color: #8FC33C;
-}
-#right-sidebar li .active{
-	border: 1pt solid #8FC33C;
-	border-radius: 10pt;
-	color: white;
-    background-color: #8FC33C;
-}
-
-
-/* ----------------- Footer Section Styling ----------------- */
-
-footer{
-	position: relative;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-color: #203621;
-	color: white;
-}
-footer h1{
-	font-size: 1.5em;
-	text-align: left;
-	border-top: 1pt solid #8FC33C;
-	padding-top: 0.5em;
-}
-
-#footer-container{
-	display: flex;
-	justify-content: left;
-	padding: 1em;
-}
-#footer-left{
-	width: 20%;
-	margin: 0 1em 0 1em;
-}
-#footer-main{
-	width: 70%;
-	margin-right: 1em;
-}
-#footer-left img{
-	vertical-align: middle;
-	margin: 0 0.5em 0.5em 0;
-	max-height: 3em;
-	width: auto;
-}
-#footer-main p{
-	text-align: left;
-	width: 80%;
-}
-#last-edited{
-	font-size: 0.8em;
-}
-
-/* ----------------- index (AKA Find Leftovers) ----------------- */
-#findLeftovers figure{
-	margin: 0
-}
-#findLeftovers img, #eventsList img{
-  height: auto;
-  width: 25em;
-}
-#findLeftovers figcaption{
-	font-weight: bold;
-}
-#findLeftovers .time-remaining{
-	font-size: 0.5em;
-	padding: 0.7em;
-	background-color: #f2f2f2;
-	border: 1pt #f2f2f2 solid;
-	border-radius: 20pt;
-	vertical-align: middle;
-}
-@media screen and (max-width: 760px){
-	#findLeftovers img, #eventsList img{
-	  height: auto;
-	  width: 15em;
+	#left-sidebar, #right-sidebar{
+		margin-left: auto;
+		margin-right: auto;
 	}
-	.time-remaining{
-		display: inline-block;
+	#center-column{
+		margin: 1em 0 1em 0;
 	}
-}
+	#left-sidebar article{
+		display: none;
+	}
 
-/* ----------------- eventsList ----------------- */
-#upcomingEvents{
-	padding: 1em;
-}
-#pastEvents{
-	padding: 1em;
-	background-color: #f2f2f2;
-	border: 2pt solid #f2f2f2;
-	border-radius: 15pt;
-}
-
-/* ----------------- memberList ----------------- */
-#memberList table{
-	margin: 1em;
-	border-collapse: collapse;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-}
-#memberList th{
-	width: auto;
-	height: 2em;
-	white-space: nowrap;
-	background-color: #8FC33C;
-	padding: 0 1em;
-}
-#memberList tr:nth-child(even){
-	background-color: #f2f2f2;
-}
-#memberList #profilePic{
-	width: auto;
-	height: 64px;
-}
-
-#memberList{
-	overflow: auto;
-}
-#memberList th{
-
-}
-#editDelete img{
-	max-height: 16px;
-}
-/* ----------------- Forms ----------------- */
-input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, textarea:focus, select:focus, input[type=checkbox]:focus, input[type=radio]:focus, input[type=number]:focus{
-	outline: 1px solid #8FC33C;
-	border-radius: 4px;
-}
-
-input[type=text], textarea, input[type=email], input[type=password], input[type=number], select {
-	padding: 0.5em;
-	border-radius: 0;
-}
-
-fieldset{
-	background-color: #f2f2f2;
-	border: none;
-	border-radius: 5pt;
-	padding: 0 1em 1em 1em;
-	margin-bottom: 1em;
-	width: inherit;
-}
-
-fieldset table{
-	margin-left: auto;
-	margin-right: auto;
-}
-
-fieldset textarea{
-	width: 95%;
-}
-
-input[type=submit]{
-	width: 100%;
-	display: inline-block;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-	color: white;
-	background-color: #203621;
-	border: 1px solid #203621;
-	border-radius: 4px;
-	box-sizing: border-box;
-	margin-bottom: 0;
-}
-
-input[type=submit]:hover{
-	background-color: #8FC33C;
-	border-color: #8FC33C;
-}
-
-#loginPage form{
-	border-radius: 5px;
-	background-color: #f2f2f2;
-	padding: 1.5em;
-	max-width: 15em;
-	margin-left: auto;
-	margin-right: auto;
-}
-#loginPage h2{
-	text-align: center;
-	font-size: 1.25em;
-}
-#loginPage th{
-	vertical-align: middle;
-}
-#loginPage input{
-	margin-bottom: 1em;
-}
-#loginPage input[type=text], input[type=password]{
-	padding: 0.5em 0 0.5em 0;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-}
-
-.tableFieldset table{
-	border-collapse: collapse;
-}
-
-.tableFieldset th{
-	text-align: left;
-	font-weight: normal;
-	min-width: 6em;
-}
-
-.tableFieldset input{
-	width: 95%;
-}
-
-.tableFieldset input[type=password]{
-	width: 100%;
-}
-
-@media screen and (max-width: 760px){
+	/* ----- PAGE-SPECIFIC ----- */
 	.tableFieldset select{
 		width: 15em;
 		overflow: hidden;
 		white-space: normal;
 	}
-}
-#leftoversForm th{
+	#findLeftovers img, #eventsList img{
+	  height: auto;
+	  width: 15em;
+	}
 }
