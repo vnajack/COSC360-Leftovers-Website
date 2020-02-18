@@ -32,11 +32,10 @@ window.onload = function(){
   mainForm.onsubmit = function(e){ //for when the form is submitted
 
 	var inputedItems = document.forms["donorSubmission"]["foodDescription"].value;
-	var inputedPicture = document.forms["donorSubmission"]["picture"].value;
 	var inputedKiloGrams = document.forms["donorSubmission"]["kg"].value;
 	var inputedDate = document.forms["donorSubmission"]["pickUpDate"].value;
 
-	 if (checkBlank(inputedItems) || checkBlank(inputedPicture) || checkBlank(inputedKiloGrams) || checkBlank(inputedDate)){
+	 if (checkBlank(inputedItems) || checkBlank(inputedKiloGrams) || checkBlank(inputedDate)){
 		alert("Please fill out all of the required fields");
 		e.preventDefault();
 	}
