@@ -1,36 +1,37 @@
 function checkBlank(input){
   if (input == '') {
     return true;
-} else return false;
-}
+  } else{
+    return false;
+}}
 
 window.onload = function(){
   var mainForm = document.getElementById("event");
 
 mainForm.onsubmit = function(e){
-  var inputedTitle = document.forms["makeEvent"]["eventTitle"].value;
-  var inputedPoster = document.forms["makeEvent"]["eventPoster"].value;
-  var inputedDate = document.forms["makeEvent"]["eventDate"].value;
-  var inputedDescription = document.forms["makeEvent"]["eventDescription"].value;
+  var inputtedTitle = document.forms["makeEvent"]["eventTitle"].value;
+  var inputtedPoster = document.forms["makeEvent"]["eventPoster"].value;
+  var inputtedDate = document.forms["makeEvent"]["eventDate"].value;
+  var inputtedLocation = document.forms["makeEvent"]["eventLocation"].value;
+  var inputtedDescription = document.forms["makeEvent"]["eventDescription"].value;
 
-  if (checkBlank(inputedTitle)) {
-    console.log(inputedTitle);
-  			alert("Please enter a title for your event.");
-  			e.preventDefault();
-  		} else if(checkBlank(inputedPoster)){
-        alert("Please upload an image of the poster.");
-  			e.preventDefault();
-      }
-      else if (checkBlank(inputedDate)){
-  			alert("Please select the date and time that the event to be held.");
-  			e.preventDefault();
-  		}
-  		else if (checkBlank(inputedDescription)){
-  			alert("Enter a brief description for the event");
-  			e.preventDefault();
-  		}
-  		else {
-  			return true;
-  		}
+  if (checkBlank(inputtedTitle)) {
+  	alert("Please enter a title for your event.");
+  	e.preventDefault();
+  } else if (checkBlank(inputtedPoster)){
+  	alert("Please include your event poster for the public to see it.");
+  	e.preventDefault();
+  } else if (checkBlank(inputtedDate)){
+  	alert("Please select a date and time for your event from the calendar and time indicator.");
+  	e.preventDefault();
+  } else if (checkBlank(inputtedLocation)){
+  	alert("Please type the location for the event. If it has not been selected yet, please type 'TBD' and you can edit it later.");
+  	e.preventDefault();
+  } else if (checkBlank(inputtedDescription)){
+  	alert("Enter a brief description for the event");
+  	e.preventDefault();
+  } else {
+  	return true;
   }
+}
 }
