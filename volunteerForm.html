@@ -3,14 +3,13 @@
 <head>
 	<title>Volunteer Form</title>
 	<meta charset = "utf-8">
-	<script type="text/javascript" src="jsExternal/volunteerValidation.js"></script>
-<!-- NOT LOGGED IN -->  	<script type="text/javascript" src="jsExternal/header_notLoggedIn.txt"></script>
-<!-- isMEMBER LOGGED IN 	<script type="text/javascript" src="jsExternal/header_isMemberLoggedIn.txt"></script>  -->
-<!-- isVOLUNTEER LOGGED IN 	<script type="text/javascript" src="jsExternal/header_isVolunteerLoggedIn.txt"></script>  -->
-<!-- isADMIN LOGGED IN 		<script type="text/javascript" src="jsExternal/header_isAdminLoggedIn.txt"></script>  -->
+	<script src="jsExternal/volunteerValidation.js"></script>
+<!-- NOT LOGGED IN -->  	<script src="jsExternal/header_notLoggedIn.txt"></script>
+<!-- isVOLUNTEER LOGGED IN 	<script src="jsExternal/header_isVolunteerLoggedIn.txt"></script>  -->
+<!-- isADMIN LOGGED IN 		<script src="jsExternal/header_isAdminLoggedIn.txt"></script>  -->
 </head>
 <body>
-	<script type="text/javascript" src="jsExternal/left-column.txt"></script>
+	<script src="jsExternal/left-column.txt"></script>
 <main id="volunteerForms">
 	<h1>Volunteer Application Form</h1>
 	<p><span class="important-notice"> An asterisk (*) indicates a required field.</span></p>
@@ -55,7 +54,6 @@
 					<td><input type="checkbox" name="skills" value="cooking">Cooking</td>
 				</tr>
 				</table>
-			</p>
 			<p><label> Tells us about any other relevant information (such as time constraints, other skills, or anything else you want to share) </label><br>
 			<textarea name="other" form="volunteer" title="Tell us more" rows=5></textarea></p>
 		</fieldset>
@@ -64,20 +62,20 @@
 			<p>Once your volunteer application is accepted you can log in using the credentials you choose here.</p>
 			<table class="tableFieldset">
 				<tr>
-					<th><label>Username: <span class="important-notice">*</span></label></th>
+					<th><label>Username:<span class="important-notice">*</span></label></th>
 					<td><input type="text" name="username" title="Can only contain letters and numbers. No punctuation or special characters." required></td>
-				</tr>
-				<tr>
-					<th><label>Email:<span class="important-notice">*</span></label></th>
-					<td><input type="email" name="email" required></td>
 				</tr>
 				<tr>
 					<th><label>Password:<span class="important-notice">*</span></label></th>
 					<td><input type="password" name="password" title="Your password must contain 6 or more characters" required></td>
 				</tr>
 				<tr>
-					<th><label>Profile Picture:<span class="important-notice">*</span></label></th>
-					<td><input type="file" name="profilePicture" title="Please upload a picture so we can verify who you are" accept="image/*" required></td>
+					<th><label>Profile Picture:</label></th>
+					<td><input type="file" name="profilePicture" title="Please upload a picture so we can verify who you are" accept="image/*"></td>
+				</tr>
+				<tr>
+					<th><label>Email:<span class="important-notice">*</span></label></th>
+					<td><input type="email" name="email" required></td>
 				</tr>
 				<tr>
 					<th><label>Phone Number:</label></th>
@@ -86,7 +84,8 @@
 				<tr>
 					<th><label>Choose a security question:<span class="important-notice">*</span></label></th>
 					<td><select name="securityQuestion" title="This is used to reset your password if you forget it" required>
-						<option value="Q1" selected>What is the name of your first pet?</option>
+						<option value="" disabled selected hidden>Choose a security question</option>
+						<option value="Q1">What is the name of your first pet?</option>
 						<option value ="Q2">What was the first name of your childhood best friend?</option>
 					</select></td>
 				</tr>
@@ -99,8 +98,8 @@
 		<input type="submit" value="Submit">
 	</form>
 	</main>
-  <!-- NOT LOGGED IN  -->	<script type="text/javascript" src="jsExternal/right-column_notLoggedIn.txt"></script>
-  <!-- IS LOGGED IN    		<script type="text/javascript" src="jsExternal/right-column_isLoggedIn.txt"></script> -->
-  <script type="text/javascript" src="jsExternal/footer.txt"></script>
+  <!-- NOT LOGGED IN  -->	<script src="jsExternal/right-column_notLoggedIn.txt"></script>
+  <!-- IS LOGGED IN    		<script src="jsExternal/right-column_isLoggedIn.txt"></script> -->
+  <script src="jsExternal/footer.txt"></script>
 </body>
 </html>
