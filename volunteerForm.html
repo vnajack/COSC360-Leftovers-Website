@@ -27,7 +27,7 @@
 			</select></p>
 			<p><label>Program/Degree: </label> <input type="text" name="program" title="Program/Degree"></p>
 			<p><label>Why do you want to volunteer with the Leftovers club?<span class="important-notice">*</span></label><br>
-			<textarea name="whyVolunteer" form="volunteer" title="Why do you want to volunteer?" rows=5 required></textarea></p>
+			<textarea name="whyVolunteer" id="reason" form="volunteer" title="Why do you want to volunteer?" rows=5 required></textarea></p>
 			<p><label>What is your general availability? </label> <select name="availabilityChoices" title="What is your general availability">
 				<option>Any time</option>
 				<option>Mornings</option>
@@ -83,7 +83,7 @@
 				</tr>
 				<tr>
 					<th><label>Choose a security question:<span class="important-notice">*</span></label></th>
-					<td><select name="securityQuestion" title="This is used to reset your password if you forget it" required>
+					<td><select name="securityQuestion" id="secQuestion" title="This is used to reset your password if you forget it" required>
 						<option value="" disabled selected hidden>Choose a security question</option>
 						<option value="Q1">What is the name of your first pet?</option>
 						<option value ="Q2">What was the first name of your childhood best friend?</option>
