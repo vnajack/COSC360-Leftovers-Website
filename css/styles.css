@@ -111,7 +111,7 @@ nav a {
   margin: 0;
 }
 
-nav a:hover, .dropdown:hover .dropbtn, .active {
+nav .active, .main-nav-dropdown a:hover, .main-nav-dropdown:hover .nav-icon, .dropdown:hover .dropbtn {
   background-color: #8FC33C;
 }
 
@@ -150,6 +150,11 @@ nav a:hover, .dropdown:hover .dropbtn, .active {
 }
 nav img{
 	height: 1em;
+}
+.main-nav-dropdown .nav-icon {
+	font-size: 1em;
+	padding: 1em;
+	margin: 0;
 }
 
 /* ----------------- Container Styling - contains left sidebar, center column, and right sidebar ----------------- */
@@ -472,15 +477,7 @@ input[type=submit]:hover, #getCredentials a:hover{
 	}
 
 	.main-nav-dropdown {
-		float: left;
 	  overflow: hidden;
-	}
-
-	.main-nav-dropdown .nav-icon {
-	  font-size: 1em;
-	  color: white;
-	  padding: 1em;
-	  margin: 0;
 	}
 
 	.main-nav {
@@ -518,9 +515,6 @@ input[type=submit]:hover, #getCredentials a:hover{
 		border: 0.25pt solid #203621;
 	}
 
-	.dropdown .dropbtn{
-		color: black;
-	}
 	/* ----- CONTAINER AND SECTIONS ----- */
   #container{
   flex-wrap: wrap;
