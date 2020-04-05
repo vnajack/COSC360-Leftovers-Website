@@ -1,0 +1,655 @@
+/* ----------------- General Text ----------------- */
+html{
+	margin: 0;
+}
+body{
+	margin: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h1{
+	font-size: 2em;
+	margin: 0 0 0.5em 0;
+}
+
+h2{
+	font-size: 1.5em;
+	margin: 0 0 0.5em 0;
+}
+
+h3{
+	font-size: 1em;
+	font-weight: bold;
+	margin: 0em 0 0.5em 0;
+}
+figure figcaption{
+	font-style: italic;
+}
+main{
+	min-height: 55vh;
+}
+main article{
+	border-top: 1pt solid #8FC33C;
+	padding-top: 0.5em;
+}
+main a, footer a{
+	color: #8FC33C;
+	text-decoration: underline;
+}
+main a:hover, footer a:hover{
+	text-decoration: none;
+}
+
+.important-notice{
+	color: red;
+	font-weight: bold;
+}
+.center-text{
+	text-align: center;
+}
+.left-text{
+	text-align: left;
+}
+.right-text{
+	text-align: right;
+}
+.reminder{
+	font-size: 90%;
+	font-style: italic;
+	margin: 0.5em;
+}
+.leftBlank {
+	color: #FF0000;
+	font-size: 12px;
+}
+
+/* ----------------- Header Styling ----------------- */
+header{
+  margin: 0;
+  height: 200px;
+  background-image: url("../images/header_200.png");
+  background-repeat: x-repeat;
+  position: relative;
+}
+
+/* If we want an image or text in the center of the header */
+/*header img{
+  height: 12em;
+  width: auto;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  border-radius:30%;
+}
+header h1{
+  top: 30%;
+  left: 50%;
+  position: absolute;
+  background-color: white;
+  padding: 1em;
+  width: auto;
+}*/
+
+/* ----------------- Navigation Bar Styling ----------------- */
+.top-sticky{
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
+nav {
+  overflow: hidden;
+  background-color: #203621;
+	height: 50px;
+	z-index: 10;
+}
+.float-right{
+  float: right;
+}
+
+nav a {
+  float: left;
+  font-size: 1em;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  text-decoration: none;
+}
+
+.dropdown {
+	float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 1em;
+  padding: 1em;
+  margin: 0;
+
+}
+
+nav .active, .main-nav-dropdown a:hover, .main-nav-dropdown:hover .nav-icon, .dropdown:hover .dropbtn {
+	color: white;
+	background-color: #8FC33C;
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+	top: 50px;
+  background-color: #f2f2f2;
+	border-top: 0.50pt solid #000000;
+	border-right: 0.75pt solid #000000;
+	border-bottom: 0.75pt solid #000000;
+	border-left: 0.75pt solid #000000;
+
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 1em;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+
+}
+
+.dropdown-content a:hover {
+  background-color: #8FC33C;
+  color: white;
+  min-width: 8em;
+
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+
+}
+.main-nav-dropdown{
+	height: 50px;
+	overflow: hidden;
+
+}
+.nav-icon{
+	display: none;
+
+}
+nav img{
+	height: 1em;
+}
+.main-nav-dropdown .nav-icon {
+	font-size: 1em;
+	padding: 1em;
+	margin: 0;
+
+}
+
+/* ----------------- Container Styling - contains left sidebar, center column, and right sidebar ----------------- */
+#container{
+	margin: 1em;
+	display: flex;
+}
+
+/* ----------------- Left Sidebar Styling ----------------- */
+#left-sidebar{
+	min-width: 10em;
+	width: 20%;
+	margin-right: 1em;
+}
+#left-sidebar .img-fluid{
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+#left-sidebar figure{
+	margin: 0;
+}
+p#left-sidebar-event{
+	margin-top: 0.5em;
+	margin-bottom:0.5em;
+}
+#left-sidebar-event a{
+	display: inline-block;
+	color: #8FC33C;
+	text-decoration: none;
+	padding: 0.5em;
+	border: 1pt solid white;
+	border-radius: 10pt;
+}
+#left-sidebar-event a:hover{
+	border: 1pt solid #8FC33C;
+	border-radius: 10pt;
+	color: white;
+	background-color: #8FC33C;
+}
+
+/* ----------------- Center Column Styling ----------------- */
+#center-column{
+	width: 100%;
+	clear: both;
+}
+/* ----------------- Right Sidebar Styling ----------------- */
+#right-sidebar{
+	min-width: 10em;
+	width: 20%;
+	margin-left: 1em;
+}
+#right-sidebar h1{
+	margin-bottom: 0.25em;
+}
+#right-sidebar ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+#right-sidebar li a{
+	display: inline-block;
+	color: #8FC33C;
+	text-decoration: none;
+	padding: 0.5em;
+	margin-bottom: 0.5em;
+	border: 1pt solid white;
+	border-radius: 10pt;
+}
+#right-sidebar li a:hover{
+	border: 1pt solid #8FC33C;
+	border-radius: 10pt;
+	color: white;
+	background-color: #8FC33C;
+}
+#right-sidebar li .active{
+	border: 1pt solid #8FC33C;
+	border-radius: 10pt;
+	color: white;
+  background-color: #8FC33C;
+}
+
+
+/* ----------------- Footer Section Styling ----------------- */
+
+footer{
+	position: relative;
+
+	background-color: #203621;
+	color: white;
+	width: 100%;
+}
+footer h1{
+	font-size: 1.5em;
+	text-align: left;
+	border-top: 1pt solid #8FC33C;
+	padding-top: 0.5em;
+}
+
+#footer-container{
+	display: flex;
+	justify-content: left;
+	padding: 1em;
+}
+#footer-left{
+	width: 20%;
+	margin-right: 1em;
+}
+#footer-main{
+	width: 80%;
+}
+#footer-left img{
+	vertical-align: middle;
+	margin: 0 0.5em 0.5em 0;
+	max-height: 3em;
+	width: auto;
+}
+#footer-main p{
+	font-size: 1em;
+	text-align: left;
+	width: 80%;
+}
+p#last-edited{
+	font-size: 0.8em;
+}
+
+/* ----------------- index (AKA Find Leftovers) ----------------- */
+#findLeftovers figure, #searchResults figure, #eventsList figure{
+	margin: 0;
+}
+#findLeftovers img, #searchResults img, #eventsList img{
+  height: auto;
+  width: 25em;
+}
+#findLeftovers figcaption, #eventsList figcaption{
+	font-weight: bold;
+}
+#findLeftovers .time-remaining, #searchResults .time-remaining{
+	font-size: 0.5em;
+	padding: 0.7em;
+	background-color: #f2f2f2;
+	border: 1pt #f2f2f2 solid;
+	border-radius: 20pt;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+/* ----------------- eventsList ----------------- */
+#upcomingEvents{
+	padding: 0 1em;
+}
+#pastEvents{
+	padding: 1em 1em 0 1em;
+	background-color: #f2f2f2;
+	border: 2pt solid #f2f2f2;
+	border-radius: 15pt;
+}
+
+/* ----------------- memberList ----------------- */
+#memberList{
+	margin: 1em;
+}
+
+table#memberList-head{
+	border-collapse: collapse;
+	table-layout: auto;
+	width: 98%;
+	margin: 1em;
+}
+
+#memberList-headLeft h1{
+	margin: 0;
+}
+#memberList-headRight{
+	margin: 0;
+	vertical-align: middle;
+	text-align: right;
+}
+
+#memberList table{
+	border-collapse: collapse;
+	text-align: center;
+	table-layout: auto;
+	width: 100%;
+}
+
+#memberList th{
+	width: auto;
+	height: 2em;
+	white-space: nowrap;
+	background-color: #8FC33C;
+	padding: 0 1em;
+}
+
+#memberList tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+#memberList #profilePic{
+	width: auto;
+	height: 64px;
+}
+
+#memberList{
+	overflow: auto;
+}
+#memberList img{
+	width: 64px;
+	height: auto;
+}
+.editDelete{
+	max-width: 24px;
+}
+
+/* ----------------- Forms ----------------- */
+#loginPage form{
+	max-width: 20em;
+	margin-left: auto;
+	margin-right: auto;
+}
+#loginPage h2{
+	text-align: center;
+	font-size: 1.25em;
+}
+#loginPage th{
+	font-weight: bold;
+	padding-bottom: 0.5em;
+}
+#loginPage input{
+	margin-bottom: 1em;
+	padding: 0.5em;
+}
+#loginPage input[type=text], #loginPage input[type=password]{
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+#viewAccount th, #viewMember th{
+	font-weight: bold;
+}
+#viewAccount input[type=submit], #viewMember input[type=submit], #viewMember input[type=button]{
+	margin-top: 1em;
+}
+
+.tableFieldset table{
+	border-collapse: collapse;
+}
+
+.tableFieldset th{
+	text-align: left;
+	font-weight: normal;
+	min-width: 6em;
+	margin: 0;
+	padding: 0;
+}
+
+.tableFieldset input{
+	width: 95%;
+}
+
+input:focus, textarea:focus, select:focus{
+	outline: 1px solid #8FC33C;
+	border-radius: 4px;
+}
+
+input, textarea, select{
+	padding: 0.5em;
+	border-radius: 0;
+}
+
+input[type=file]{
+	padding: 0.5em 0;
+}
+
+input[type=checkbox]{
+	width: 1em;
+	height: 1em;
+}
+
+fieldset{
+	background-color: #f2f2f2;
+	border: none;
+	border-radius: 5pt;
+	padding: 1em;
+	margin-bottom: 1em;
+	width: inherit;
+}
+
+fieldset table{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+fieldset textarea{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width: 95%;
+}
+
+input[type=file]{
+	cursor: pointer;
+}
+
+input[type=submit], #getCredentials a, #viewMember input[type=button]{
+	width: 50%;
+	margin-right: 25%;
+	margin-bottom: 0;
+	margin-left: 25%;
+	display: inline-block;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	color: white;
+	background-color: #203621;
+	border: 1px solid #203621;
+	border-radius: 4px;
+	box-sizing: border-box;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+}
+
+input[type=submit]:hover, #getCredentials a:hover, #viewMember input[type=button]:hover{
+	background-color: #8FC33C;
+	border-color: #8FC33C;
+	cursor: pointer;
+}
+
+#viewMember input[type=button]{
+	background-color: red;
+	border-color: red;
+}
+
+#viewMember input[type=radio]{
+	width: auto;
+}
+
+/* ----------------- getCredentials ----------------- */
+#getCredentials table{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1em;
+}
+
+#getCredentials tbody{
+	background-color: #f2f2f2;
+}
+
+#getCredentials tfoot{
+	padding: 0.5em;
+	background-color: none;
+	border-radius: 5pt;
+}
+
+#getCredentials th{
+	padding: 1em;
+	background-color: #8FC33C;
+	border-radius: 5pt;
+}
+
+#getCredentials td{
+	padding: 1em;
+	border-radius: 5pt;
+}
+
+/* ----------------- viewAccount ----------------- */
+#viewAccount img, #viewMember img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1em;
+	width: 128px;
+	height: auto;
+	text-align: center;
+}
+
+/* --------------------------------------- Responsive Design ------------------------------------------- */
+@media screen and (max-width: 760px){
+	/* ----- NAVIGATION ----- */
+	.nav-icon{
+		display: initial;
+	}
+
+	.main-nav-dropdown {
+	  overflow: hidden;
+	}
+
+	.main-nav {
+	  display: none;
+	  position: absolute;
+		top: 50px;
+		right: 0;
+	  background-color: #f2f2f2;
+		border-top: 0.50pt solid #203621;
+		border-right: 0.50pt solid #203621;
+		border-bottom: 0.75pt solid #203621;
+		border-left: 0.75pt solid #203621;
+	}
+
+	.main-nav a {
+	  float: none;
+		clear: both;
+	  color: black;
+	  padding: 1em;
+	  text-decoration: none;
+	  display: block;
+	  text-align: left;
+		min-width: 8em;
+	}
+
+	.main-nav a:hover {
+	  background-color: #8FC33C;
+	  color: white;
+	}
+
+	.main-nav-dropdown:hover .main-nav {
+	  display: block;
+	}
+
+	.dropdown-content {
+		top: inherit;
+		right: 69.5px;
+		border-top: 1.00pt solid #203621;
+		border-right: 0.50pt solid #203621;
+		border-bottom: 0.50pt solid #203621;
+		border-left: 1.00pt solid #203621;
+	}
+
+
+
+	/* ----- CONTAINER AND SECTIONS ----- */
+  #container{
+  	flex-wrap: wrap;
+  }
+	#left-sidebar, #right-sidebar{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#center-column{
+		margin: 1em 0 1em 0;
+	}
+	#left-sidebar article{
+		display: none;
+	}
+	#right-sidebar{
+		width: auto;
+	}
+	#footer-left{
+		width: 30%;
+	}
+	#footer-main{
+		width: 70%;
+	}
+
+	/* ----- PAGE-SPECIFIC ----- */
+	.tableFieldset select{
+		width: 15em;
+		overflow: hidden;
+		white-space: normal;
+	}
+	#findLeftovers img, #eventsList img{
+	  height: auto;
+	  width: 15em;
+	}
+	#memberList-head h1, #memberList-head form{
+		display: block;
+	}
+	#memberList-head form{
+		position: static;
+		text-align: left;
+	}
+}
