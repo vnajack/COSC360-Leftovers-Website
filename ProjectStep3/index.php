@@ -35,6 +35,7 @@
      $result = $pdo->query($sql); //executes query
      while ($row = $result->fetch()){
        //variables we're using from the database
+       $postID = $row["postID"];
        $img_src = $row["postPicture"];
        $foodItems = $row["postFoodItems"];
        $safeUntil = $row["minutesSafe"]; //TODO: We need to figure out how to make a countdown timer for this --probably using JavaScript
@@ -60,8 +61,19 @@
        //to shorten the first line of our article
        $countdownTitle = "Leftovers available while supplies last. This is only a freshness countdown.";
 
-       echo '<article>
-         <h2><time datetime="'.$timeOfPost.'">'.$postDate.' at '.$postTime.'</time> <span class="time-remaining" title='.$countdownTitle.'>Time left: '.$safeUntil.':00</span></h2>
+       echo '
+       <article>
+        <h2><time datetime="'.$timeOfPost.'">'.$postDate.' at '.$postTime.'</time> <span class="time-remaining" title='.$countdownTitle.'>Time left: '.$safeUntil.':00</span>';
+
+       if(isAdmin()){
+         echo "
+         <span class='editDeletePost'>
+           <a href=\"editFoodPost.php?postID=".$postID."\"><img class=\"editDelete\" src=\"images/icons8-edit-30.png\" alt=\"Edit Icon\"></a>
+           <a href=\"deleteFoodPost.php?postID=".$postID."\"><img class=\"editDelete\" src=\"images/icons8-delete-48.png\" alt=\"Delete Icon\"></a>
+         </span>";
+       }
+
+         echo'</h2>
          <figure>
          <img src="'.$uploads_dir.'" alt="'.$foodItems.'" width="450" height="350" class="img-fluid">
          <figcaption>'.$foodItems.'</figcaption>
