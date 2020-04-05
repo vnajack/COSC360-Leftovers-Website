@@ -328,6 +328,10 @@ p#last-edited{
 	vertical-align: middle;
 	display: inline-block;
 }
+#findLeftovers .editDeletePost{
+	vertical-align: middle;
+	display: inline-block;
+}
 
 /* ----------------- eventsList ----------------- */
 #upcomingEvents{
@@ -652,4 +656,5 @@ input[type=submit]:hover, #getCredentials a:hover, #viewMember input[type=button
 		position: static;
 		text-align: left;
 	}
+
 }
