@@ -152,11 +152,10 @@
 
   <form id="foodPost" name="updatePost" method="POST"  enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
     <h1>Update the Leftovers Post</h1>
+    <p class="reminder">Reminder: we can only keep food out for 30 minutes until it needs to be refrigerated or completely eaten <strong>unless</strong> otherwise indicated by the food donor.</p>
     <p><span class="important-notice"> An asterisk (*) indicates a required field.</span></p>
     <fieldset>
       <img src="<?php echo $uploads_dir; ?>" alt="<?php echo $postFoodItems; ?>">
-      <p><strong>Please fill out the following details to update the leftovers post.</strong></p>
-      <p class="reminder center-text">Reminder: we can only keep food out for 30 minutes until it needs to be refrigerated<br>or completely eaten <strong>unless</strong> otherwise indicated by the food donor.</p>
       <table class="tableFieldset">
         <tr>
           <th><label>Update the date and time of this post?</label></th>
@@ -205,7 +204,7 @@
         </tr>
       </table>
     </fieldset>
-    <input id="postFoodDrop" type="submit" value="Post">
+    <input id="postFoodDrop" type="submit" value="Save">
   </form>
 
   <?php
