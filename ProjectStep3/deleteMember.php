@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Member List</title>
+  <title>Delete Member</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/styles.css">
@@ -102,10 +102,6 @@
       require_once("include/error-notLoggedIn.inc.php");
       require_once("include/right-column.inc.php");
     }
-
-
-
-
 
     echo '</main></div>';
 
