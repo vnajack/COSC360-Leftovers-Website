@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Log In</title>
+	<meta charset = "utf-8">
+<!-- NOT LOGGED IN -->  	<script src="jsExternal/header_notLoggedIn.txt"></script>
+</head>
+<body>
+	<script src="jsExternal/left-column.txt"></script>
+	<main id="loginPage">
+  <h1> Welcome Back! </h1>
+  <form name="createAccount" method=post action="loggedIn.html" autocomplete="off">
+		<fieldset>
+		<h2>Log In</h2>
+		<table class="tableFieldset">
+			<tr>
+				<th><label>Username: </label></th>
+				<td><input type="text" name="username" pattern="[a-zA-Z0-9]+" title="Can only contain letters and numbers. No punctuation or special characters." required autofocus></td>
+			</tr>
+			<tr>
+				<th><label>Password: </label></th>
+				<td><input type="password" name="password" pattern=".{6,}" title="Your password must contain 6 or more characters" required></td>
+			</tr>
+    </table>
+  	<input type = "submit">
+	 </fieldset>
+	</form>
+		<p class="center-text"><a href="forgotCredentials.html">Forgot your credentials?</a></p>
+		<p class="center-text">Don't have an account? <a href="volunteerForm.html">Become a volunteer!</a></p>
+	</main>
+  <!-- NOT LOGGED IN  -->	<script src="jsExternal/right-column_notLoggedIn.txt"></script>
+  <script src="jsExternal/footer.txt"></script>
+</body>
+</html>
