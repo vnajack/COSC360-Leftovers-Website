@@ -16,7 +16,7 @@
   ?>
   <main id="leftoversForm">
   <?php
-  if(isLoggedIn()){
+  if(isLoggedIn() && isAdmin()){
     require_once('include/db_connection.php');
     echo "<a href=\"index.php\">&laquo; Back to Leftovers Posts</a>";
 
@@ -208,7 +208,8 @@
   </form>
 
   <?php
-
+  }elseif (isLoggedIn()) {
+    require_once("include/error-mustBeAdmin.inc.php");
   }else{
     require_once("include/error-notLoggedIn.inc.php");
   }
