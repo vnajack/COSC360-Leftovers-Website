@@ -13,23 +13,31 @@ function isApproved(){
 }
 
 function isAdmin(){
-  if(strcmp($_SESSION["type"], "Admin")==0){
-    return TRUE;
-  }else{
+  if(!isset($_SESSION["type"])){
     return FALSE;
+  }else{
+    if(strcmp($_SESSION["type"], "Admin")==0){
+      return TRUE;
+    }else{
+      return FALSE;
+    }
   }
 }
 
 function isVolunteer(){
-  if(strcmp($_SESSION["type"], "Volunteer")==0){
-    return TRUE;
-  }else{
+  if(!isset($_SESSION["type"])){
     return FALSE;
+  }else{
+    if(strcmp($_SESSION["type"], "Volunteer")==0){
+      return TRUE;
+    }else{
+      return FALSE;
+    }
   }
 }
 
 function isLoggedIn(){
-  if(empty($_SESSION["username"])){
+  if(!isset($_SESSION["username"]) || empty($_SESSION["username"])){
     return FALSE;
   }else{
     return TRUE;
