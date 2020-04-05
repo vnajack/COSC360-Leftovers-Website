@@ -527,15 +527,13 @@ input[type=submit]:hover, #getCredentials a:hover, #viewMember input[type=button
 	width: auto;
 }
 
+#leftoversForm h1{
+	margin-top: 0.5em;
+}
+
 #leftoversForm table{
 	border-collapse: separate;
 	border-spacing: 1em 1em;
-}
-
-#leftoversForm td{
-	min-width: 10em;
-	margin-left: 1em;
-	margin-right: 1em;
 }
 
 
