@@ -42,7 +42,6 @@
       $stmt->bindValue(1, $postID);
       if($stmt->execute()){
         if($row = $stmt->fetch()){
-          echo "<h1>Getting values</h1>";
           $timeOfPost = $row["timeOfPost"];
           $minutesSafe = $row["minutesSafe"];
           $postFoodItems = $row["postFoodItems"];
