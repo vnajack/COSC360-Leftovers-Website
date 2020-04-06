@@ -2,7 +2,7 @@
   //connect to the database
   require_once('include/db_connection.php');
 
-  echo '<a href=\"memberList.php\">&laquo; Back to Member List</a>';
+  echo "<a href=\"memberList.php\">&laquo; Back to Member List</a>";
 
   //variables used for the SELECT statement and to display as form values
   $username = $name = $type = $yearOfStudy = $program = $availabilityChoices = $skills = $email = $phonenum = $img_src = $pname = $uploads_dir = "";
@@ -171,7 +171,7 @@
 
       print("<script>window.alert('Successfully saved updated ".$entered_name."\'s information!');window.location.href = 'viewEditMember.php?username=".$entered_username."';</script>");
     }else{
-      print("<script>window.alert('Error. Unable to update information. Please try again later.');</script>");
+      //print("<script>window.alert('Error. Unable to update information. Please try again later.');</script>");
       $_SESSION["editOK"] = FALSE;
     }
   }
@@ -198,9 +198,9 @@
 
           <th><label>Member Type: </label>
             <td>
-              <input <?php if(strcmp($type, "Admin")==0){echo 'checked';} ?> type="radio" name="typeOfUser" value="Admin"><label for="Admin">Admin</label><br>
-              <input <?php if(strcmp($type, "Volunteer")==0){echo 'checked';} ?> type="radio" name="typeOfUser" value="Volunteer"><label for="Volunteer">Volunteer</label><br>
-              <input <?php if(strcmp($type, "Pending Applicant")==0){echo 'checked';} ?> type="radio" name="typeOfUser" value="Pending Applicant"><label for="Pending Applicant">Pending Applicant</label>
+              <input <?php if(strcmp($type, "Admin")==0){echo 'checked';} ?> type="radio" name="typeOfUser" value="Admin"><label for="Admin"><b>Admin</b> (has full privileges)</label><br>
+              <input <?php if(strcmp($type, "Volunteer")==0){echo 'checked';} ?> type="radio" name="typeOfUser" value="Volunteer"><label for="Volunteer"><b>Volunteer</b> (has limited privileges)</label><br>
+              <input <?php if(strcmp($type, "Pending Applicant")==0){echo 'checked';} ?> type="radio" name="typeOfUser" value="Pending Applicant"><label for="Pending Applicant"><b>Pending Applicant</b> (no privileges - can only log in)</label>
             </td>
           </tr>
 
