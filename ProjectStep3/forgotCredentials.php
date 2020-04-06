@@ -12,8 +12,7 @@
     include "include/checkLoggedIn.inc.php";
     include "include/top-navigation-bar.inc.php";
     include "include/left-column.inc.php";
-
-    include 'include/db_connection.php'; //connect to database
+  require_once("include/db_connection.php"); //causes an error otherwise if it's include 'include/db_connection.php'; //connect to database
 
 //set stuff up for pdos
     try{
@@ -31,7 +30,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
       $email = $_POST["email"];
-      if (!preg_match("/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/",$email)) { //checks to see if the format is valid
+        if (!preg_match("/[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/",$email)) { //checks to see if the format is valid
         $emailError = "Invalid email format. A valid email contains characters before and after '@' and at least two characters after '.'";
       } else {
         $sql = "SELECT email FROM users WHERE email = ?";
@@ -117,12 +116,12 @@
 
 
 
-          $to = '';
-          $subject = 'Recovery of your Password';
-          $txt = 'Hello ' .$username. ' - your password is ' .$password;
-          $headers = 'From: your_site_admin@gmail.com';
-          $x=mail($to,$subject,$txt,$headers);
-
+         $to = $email;
+                      $subject = 'Recovery of your Password';
+                      $txt = 'Hello ' .$username. ' - your password is ' .$password;
+                      $headers = 'From: your_site_admin@gmail.com';
+                      $x=mail($to,$subject,$txt,$headers);
+                      
              closeConnection($pdo);
 
         print("<script>window.alert('Check your email to recover your login credentials.');window.location.href = 'login.php';</script>");
