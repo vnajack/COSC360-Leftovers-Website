@@ -60,7 +60,7 @@
 
 
     //variables for entered values
-    $postDateTime = $entered_minutesSafe = $entered_postFoodItems = $entered_postDescription = $entered_postLocation = $entered_postAmount = $pname = $entered_donorName = $entered_postEditUsername = "";
+    $postDate = $postDateTime = $entered_minutesSafe = $entered_postFoodItems = $entered_postDescription = $entered_postLocation = $entered_postAmount = $pname = $entered_donorName = $entered_postEditUsername = "";
     $validminutesSafe = $validpostFoodItems = $validpostLocation = $validDonorName = FALSE;
     $minutesSafeError = $postFoodItemsError = $postLocationError = $donorNameError = "";
 
@@ -69,9 +69,12 @@
 
       if(empty($_POST["updateDateTime"])){
         $postDateTime = $timeOfPost;
+        $postDate = subst($timeOfPost, 0, 10)."-".subst($timeOfPost, 12, 13).subst($timeOfPost, 15, 16);
       }else{ //if the user wanted to update the date and time of the post, then this would not be empty
         $postDateTime = date("Y-m-d H:i:s");
+        $postDate = date("Y-m-d-hi");
       }
+
 
       if (empty($_POST["minutesSafe"])){
         $minutesSafeError= "Please select how much longer the leftovers will be fresh. This is the length of time until it can no longer be consumed safely (unless otherwise indicated by the food donor.";
@@ -108,9 +111,8 @@
       if(!empty($_FILES["postPicture"]["name"])){
 
         //create specific name for food post picture
-        $postDate = $postDatetime->format("Y-m-d-hi");
-        $ext = end((explode(".", $_FILES["profilePicture"]["name"]))); # extra () to prevent notice
-        $pname = $postDate."-".$ext;
+        $ext = end((explode(".", $_FILES["postPicture"]["name"]))); # extra () to prevent notice
+        $pname = $postDate.".".$ext;
 
         #temporary file name to store file
         $tname = $_FILES["postPicture"]["tmp_name"];
