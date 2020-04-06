@@ -13,8 +13,8 @@ $postPictureError = $minutesSafeError = $postFoodItemsError = $postLocationError
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
-  $postDateTime = date("Y-m-d h:i:s");
-  $postDate = date("Y-m-d");
+  $postDateTime = date("Y-m-d H:i:s");
+  $postDate = date("Y-m-d-hi");
 
   if (empty($_POST["minutesSafe"])){
     $minutesSafeError= "Please select how much longer the leftovers will be fresh. This is the length of time until it can no longer be consumed safely (unless otherwise indicated by the food donor.";
@@ -53,7 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   }else{
     $validPicture = TRUE;
 
-    $pname = $postDate.'-'.$_FILES["postPicture"]["name"]; //can't have two posts with the same date and time, so it's unique and won't get replaced
+    $ext = end((explode(".", $_FILES["postPicture"]["name"]))); # extra () to prevent notice
+    $pname = $postDate.".".$ext;
 
     #temporary file name to store file
     $tname = $_FILES["postPicture"]["tmp_name"];
