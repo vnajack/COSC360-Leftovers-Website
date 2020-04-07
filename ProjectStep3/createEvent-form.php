@@ -58,7 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){ //essentially is just checking for wh
 
   if ($validTitle && $validDate && $validLocation && $validDescription == TRUE) { //if all the data has been entered correctly
 
-    $displayDate = DateTime::createFromFormat('Y-m-d H:i:s', $eventDate);
+
+    $displayDate = substr($eventDate, 0, 10);
     $ext = end((explode(".", $_FILES["eventPoster"]["name"]))); # extra () to prevent notice
     $pname = $displayDate."-".$title.".".$ext;
 
