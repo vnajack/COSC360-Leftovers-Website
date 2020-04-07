@@ -14,6 +14,8 @@
     require_once("include/left-column.inc.php");
     require_once('include/db_connection.php');
 
+  echo "<a href=\"index.php\">&laquo; Back to Leftovers</a>";
+
     try{
         $pdo = openConnection();
     } catch (PDOException $e){
@@ -56,7 +58,7 @@
             $postDate = $postDateTime->format('F jS, Y');
             $postTime = $postDateTime->format('H:i a');
 
-            $uploads_dir = 'uploads/food-posts/'.$img_src;
+            $uploads_dir = 'uploads/foodPostPictures/'.$img_src;
 
             if(empty($donor)){
               $donor = "Anonymous donor";

@@ -14,13 +14,19 @@
     $totalAmount += $row["postAmount"];
   }
 
+  $futureEventLine = "";
+
   $sql = "SELECT * FROM events WHERE eventDate >= CURDATE() ORDER BY eventDate ASC LIMIT 1;";
   $result = $pdo->query($sql); //executes query
-  while ($row = $result->fetch()){
-    $eventTitle = $row["eventTitle"];
-    $eventDateTime = $row["eventDate"];
-    $eventDate = DateTime::createFromFormat('Y-m-d H:i:s', $eventDateTime)->format('M jS');
+  if($result->rowCount() > 0){
+    while ($row = $result->fetch()){
+      $eventTitle = $row["eventTitle"];
+      $eventDateTime = $row["eventDate"];
+      $eventDate = DateTime::createFromFormat('Y-m-d H:i:s', $eventDateTime)->format('M jS');
+    }
+    $futureEventLine = "<p id='left-sidebar-event'>Our next event:</p><p id='left-sidebar-event'><a href='events.php'>".$eventTitle." on ".$eventDate."</a></p>";
   }
+
   closeConnection($pdo);
 ?>
 
@@ -33,8 +39,7 @@
     <article>
       <?php
       echo "<p>We have saved approx. <u><b>".$totalAmount." kg</b></u> of food!</p>";
-      echo "<p id='left-sidebar-event'>Our next event:</p>";
-      echo "<p id='left-sidebar-event'><a href='events.php'>".$eventTitle." on ".$eventDate."</a></p>";
+      echo $futureEventLine;
       ?>
       <p>
       <a href="https://www.facebook.com/LeftoversUBCO/"><img src="images/facebook_16.png" alt="Facebook Link"></a>

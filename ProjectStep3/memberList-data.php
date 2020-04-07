@@ -77,7 +77,6 @@
       if(isAdmin()){ //these features are only available to Admins
         echo "<td>
         <a href=\"viewEditMember.php?username=".$username."\"><img class=\"editDelete\" src=\"images/icons8-edit-30.png\" alt=\"Edit Icon\"></a>
-        &nbsp; &nbsp;
         <a href=\"deleteMember.php?username=".$username."\"><img class=\"editDelete\" src=\"images/icons8-delete-48.png\" alt=\"Delete Icon\"></a>
         </td>";
       }

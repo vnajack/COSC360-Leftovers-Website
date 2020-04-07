@@ -1,27 +1,27 @@
-  <?php
+<?php
 
 //connect to the database
-  require_once('include/db_connection.php');
+require_once('include/db_connection.php');
 
 //set things up for pdos
-    try{
-        $pdo = openConnection();
-        echo "<h3>Connected Successfully</h3>";
-    } catch (PDOException $e){
-        echo "<h3> Connection failed</h3>";
-        die($e->getMessage());
-    }
+try{
+  $pdo = openConnection();
+  echo "<h3>Connected Successfully</h3>";
+} catch (PDOException $e){
+  echo "<h3> Connection failed</h3>";
+  die($e->getMessage());
+}
 
 
 
-  //defines our form vairables, setting them to be empty as default
-  $title = $eventPoster = $eventDate = $eventLocation = $eventDescription = $pname = "";
+//defines our form vairables, setting them to be empty as default
+$title = $eventPoster = $eventDate = $eventLocation = $eventDescription = $pname = "";
 
-  //a boolean variable used to indicate if all values have been entered correctly (indicates whether to go to index.php or not)
-  $validTitle = $validPoster = $validDate = $validLocation = $validDescription = FALSE;
+//a boolean variable used to indicate if all values have been entered correctly (indicates whether to go to index.php or not)
+$validTitle = $validPoster = $validDate = $validLocation = $validDescription = FALSE;
 
 //initializes error variables
-  $titleError = $eventPosterError = $eventDateError = $eventLocationError = $eventDescriptionError = "";
+$titleError = $eventPosterError = $eventDateError = $eventLocationError = $eventDescriptionError = "";
 
 
 
@@ -33,49 +33,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){ //essentially is just checking for wh
     $validTitle = TRUE;
   }
 
-//same logic as above. I'm just checking each field that's required to make sure there's information entered
-if (empty($_POST["eventDate"])){
-  $eventDateError = "Select a date and time for your event from the calendar and time indicator.";
-} else {
-  $eventDate = $_POST["eventDate"];
-  $validDate = TRUE;
-}
+  //same logic as above. I'm just checking each field that's required to make sure there's information entered
+  if (empty($_POST["eventDate"])){
+    $eventDateError = "Select a date and time for your event from the calendar and time indicator.";
+  } else {
+    $eventDate = $_POST["eventDate"];
+    $validDate = TRUE;
+  }
 
-if (empty($_POST["eventLocation"])){
-  $eventLocationError = "Type the location for the event. If it has not been selected yet, please type 'TBD' and you can edit it later.";
-} else {
-  $eventLocation = $_POST["eventLocation"];
-  $validLocation = TRUE;
-}
+  if (empty($_POST["eventLocation"])){
+    $eventLocationError = "Type the location for the event. If it has not been selected yet, please type 'TBD' and you can edit it later.";
+  } else {
+    $eventLocation = $_POST["eventLocation"];
+    $validLocation = TRUE;
+  }
 
-if (empty($_POST["eventDescription"])){
-  $eventDescriptionError = "Enter a description of the event";
-} else {
-  $eventDescription = $_POST["eventDescription"];
-  $validDescription = TRUE;
-}
+  if (empty($_POST["eventDescription"])){
+    $eventDescriptionError = "Enter a description of the event";
+  } else {
+    $eventDescription = $_POST["eventDescription"];
+    $validDescription = TRUE;
+  }
 
 
-if ($validTitle && $validDate && $validLocation && $validDescription == TRUE) { //if all the data has been entered correctly
-      $ext = end((explode(".", $_FILES["eventPoster"]["name"]))); # extra () to prevent notice
-      $pname = date("Y-m-d", $eventDate)."-".$title.$ext;
+  if ($validTitle && $validDate && $validLocation && $validDescription == TRUE) { //if all the data has been entered correctly
 
-      #temporary file name to store file
-      $tname = $_FILES["eventPoster"]["tmp_name"];
+    $displayDate = DateTime::createFromFormat('Y-m-d H:i:s', $eventDate);
+    $ext = end((explode(".", $_FILES["eventPoster"]["name"]))); # extra () to prevent notice
+    $pname = $displayDate."-".$title.$ext;
 
-       #upload directory path
-       $uploads_dir = 'uploads/eventPosters/';
+    #temporary file name to store file
+    $tname = $_FILES["eventPoster"]["tmp_name"];
 
-       #moves the uploaded file to specific location
-       move_uploaded_file($tname, $uploads_dir.$pname);
+    #upload directory path
+    $uploads_dir = 'uploads/eventPosters/';
 
-       $sql = "INSERT into events(eventTitle,eventPoster, eventDate, eventLocation, eventDescription) VALUES('$title','$pname', '$eventDate', '$eventLocation', '$eventDescription')";
+    #moves the uploaded file to specific location
+    move_uploaded_file($tname, $uploads_dir.$pname);
 
-        $result = $pdo->exec($sql);
-        closeConnection($pdo);
-        header('Location: events.php'); //redirect to index.php
-        exit();
-}
+    $data = array($title, $pname, $eventDate, $eventLocation, $eventDescription, $_SESSION["username"]);
+
+    $sql = "INSERT into events(eventTitle,eventPoster, eventDate, eventLocation, eventDescription, creatorUsername) VALUES(?, ?, ?, ?, ?, ?)";
+
+    $stmt = $pdo->prepare($sql);
+
+    $stmt->execute($data);
+
+    closeConnection($pdo);
+    header('Location: events.php'); //redirect to index.php
+    exit();
+  }
 }
 ?>
 
@@ -108,5 +115,5 @@ if ($validTitle && $validDate && $validLocation && $validDescription == TRUE) { 
       </tr>
     </table>
   </fieldset>
-    <input id="postEvent" type="submit" value="Post New Event">
+  <input id="postEvent" type="submit" value="Post New Event">
 </form>
