@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){ //essentially is just checking for wh
 
     $displayDate = DateTime::createFromFormat('Y-m-d H:i:s', $eventDate);
     $ext = end((explode(".", $_FILES["eventPoster"]["name"]))); # extra () to prevent notice
-    $pname = $displayDate."-".$title.$ext;
+    $pname = $displayDate."-".$title.".".$ext;
 
     #temporary file name to store file
     $tname = $_FILES["eventPoster"]["tmp_name"];
