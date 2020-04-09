@@ -25,7 +25,7 @@
 
     $emailError = $credentialError = $securityQuestionError = $securityResponseError = "";
 
-    $validEmail = $validSecurityQuestion = $validSecurityResponse = $validCredentials =  FALSE;
+    $validEmail = $validSecurityQuestion = $validSecurityResponse  =  FALSE;
 
     $dbsecurityQuestion = $dbSecurityResponse = $dbUsername = "";
 
@@ -96,12 +96,8 @@
             }
           }
 
-      $forgotten =  implode(",",$_POST["credentials"]);
-      if (sizeof($forgotten) > 0){
-        $validCredentials = TRUE;
-      }
 
-        if ($validEmail && $validSecurityQuestion && $validSecurityResponse && $validCredentials == TRUE) { //if all the data has been entered correctly
+        if ($validEmail && $validSecurityQuestion && $validSecurityResponse  == TRUE) { //if all the data has been entered correctly
           $sql = "SELECT username, password FROM users WHERE (email = ?)";
 
           if($stmt = $pdo->prepare($sql)){
