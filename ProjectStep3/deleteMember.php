@@ -67,19 +67,18 @@
       ?>
 
       <h1>Delete Account?</h1>
-      <p>Are you sure you want to delete <?php echo $_SESSION["deleteN"];?>'s account permanently?</p>
-      <p>This cannot be undone!</p>
+      <p class="important-notice center-text">Are you sure you want to delete <?php echo $_SESSION["deleteN"];?>'s account permanently?<br>This cannot be undone!</p>
 
       <form id="deleteForm" name="deleteForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <fieldset>
         <table class="tableFieldset">
           <tbody>
             <tr>
-              <th><label>Type <b><?php echo strtoupper($_SESSION["deleteN"]); ?></b> to confirm</label></th>
+              <th class="center-text"><label>Type <b><?php echo strtoupper($_SESSION["deleteN"]); ?></b> to confirm</label></th>
             </tr>
             <tr>
               <td><input type="text" name="name" title="Enter the member's name to confirm"></td>
-              <span class="leftBlank"><?php echo "<td>".$nameError."</td>";?></span>
+              <?php echo "<td><span class=\"leftBlank\">".$nameError."</span></td>";?>
             </tr>
             <tr>
               <td><input type="submit" value="Delete"></td>

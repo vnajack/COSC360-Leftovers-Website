@@ -186,14 +186,14 @@
       <tbody>
         <tr>
           <th><label> Username: </label>
-            <td><input type="text" name="username" value="<?php echo $username; ?>"><span class="leftBlank"><?php echo $usernameError; ?></span></td>
+            <td><input type="text" name="username" value="<?php echo $username; ?>"><?php echo "<span class=\"leftBlank\">".$usernameError."</span>";?></td>
 
           </tr>
 
           <tr>
             <th><label>Name: </label></th>
             <td><input autofocus type="text" name="name" title="Full name" value = "<?php echo $name;?>"></td>
-            <span class="leftBlank"><?php echo '<td>'.$nameError.'</td>';?></span>
+            <?php echo "<td><span class=\"leftBlank\">".$nameError."</span></td>";?>
           </tr>
 
           <th><label>Member Type: </label>
@@ -221,7 +221,7 @@
 
           <tr>
             <th><label> Email Address: </label></th>
-            <td> <input type="text" name="email" value="<?php echo $email; ?>" required><span class="leftBlank"><?php echo $emailError;?></span></td>
+            <td> <input type="text" name="email" value="<?php echo $email; ?>" required><?php echo "<span class=\"leftBlank\">".$emailError."</span>";?></td>
           </tr>
           <tr>
             <th><label>Phone Number:</label></th>

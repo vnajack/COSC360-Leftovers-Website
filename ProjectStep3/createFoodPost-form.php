@@ -98,22 +98,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
       <tr>
         <th><label>How much longer (in minutes) will the leftovers be fresh?<span class="important-notice">*</span></label></th>
         <td><input type="number" name="minutesSafe" min="1" max="45" title="How much longer the leftovers will be fresh?"value = "<?php echo $minutesSafe;?>"></td>
-        <span class="leftBlank"><?php echo '<td>'.$minutesSafeError.'</td>';?></span>
+        <?php echo "<td><span class=\"leftBlank\">".$minutesSafeError."</span></td>";?>
       </tr>
       <tr>
         <th><label>Image of Food:<span class="important-notice">*</span></label></th>
         <td><input type="file"  name="postPicture" accept="image/*" title="Pleave provide an image of the leftovers" required value = "<?php echo $postPicture;?>"></td>
-        <span class="leftBlank"><?php echo '<td>'.$postPictureError.'</td>';?></span>
+        <?php echo "<td><span class=\"leftBlank\">".$postPictureError."</span></td>";?></span>
       </tr>
       <tr>
         <th><label>List the food items you picked up:<span class="important-notice">*</span></label></th>
         <td><input type="text"  name="postFoodItems" title="Please list the food items you picked up." value = "<?php echo $postFoodItems;?>"></td>
-        <span class="leftBlank"><?php echo '<td>'.$postFoodItemsError.'</td>';?></span>
+        <?php echo "<td><span class=\"leftBlank\">".$postFoodItemsError."</span></td>";?></span>
       </tr>
       <tr>
         <th><label>Where will these leftovers be located?<span class="important-notice">*</span></label></th>
         <td><input type="text" name="postLocation" title="Please indicate where you are taking the leftovers." value = "<?php echo $postLocation;?>"></td>
-        <span class="leftBlank"><?php echo '<td>'.$postLocationError.'</td>';?></span>
+        <?php echo "<td><span class=\"leftBlank\">".$postLocationError."</span></td>";?></span>
       </tr>
       <tr>
         <th><label>Write a message for your post (e.g., Welcome back from winter break!)</label></th>
@@ -126,7 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
       <tr>
         <th><label>Where did the leftovers come from?<span class="important-notice">*</span></label></th>
         <td><input type="text" name="donorName" title="Where did these leftovers come from?" value = "<?php echo $donorName;?>"></td>
-        <span class="leftBlank"><?php echo '<td>'.$donorNameError.'</td>';?></span>
+        <?php echo "<td><span class=\"leftBlank\">".$donorNameError."</span></td>";?></span>
       </tr>
     </table>
   </fieldset>

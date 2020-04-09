@@ -41,7 +41,6 @@ main a:hover, footer a:hover, #center-column a:hover{
 figcaption{
 	font-weight: bold;
 }
-
 .important-notice{
 	color: red;
 	font-weight: bold;
@@ -64,6 +63,7 @@ figcaption{
 	color: red;
 	font-size: 12px;
 }
+
 
 /* ----------------- Header Styling ----------------- */
 header{
@@ -346,10 +346,10 @@ p#last-edited{
 	display: inline-block;
 }
 
-#deleteFoodPost{
+#deleteFoodPost, #deleteMember{
 	margin: 1em;
 }
-#deleteFoodPost h1, #searchResults h1, #forgottenCredentials h1{
+#deleteFoodPost h1, #searchResults h1, #forgottenCredentials h1, #deleteMember h1{
 	margin-top: 0.5em;
 }
 
@@ -528,15 +528,21 @@ input[type=submit], #getCredentials a, #viewMember input[type=button]{
 	cursor: pointer;
 }
 
-input[type=submit]:hover, #getCredentials a:hover, #viewMember input[type=button]:hover{
+input[type=submit]:hover, #getCredentials a:hover, #viewMember input[type=button]:hover, #deleteMember input[type=button]:hover, #deleteFoodPost input[type=button]:hover{
 	background-color: #8FC33C;
 	border-color: #8FC33C;
 	cursor: pointer;
 }
 
-#viewMember input[type=button]{
+#viewMember input[type=button], #deleteMember input[type=button], #deleteFoodPost input[type=button]{
+	border-radius: 4px;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	margin: auto;
+	display: block;
+	color: white;
 	background-color: red;
-	border-color: red;
+	border: 1px solid red;
 }
 
 #viewMember input[type=radio]{
@@ -547,9 +553,13 @@ input[type=submit]:hover, #getCredentials a:hover, #viewMember input[type=button
 	margin-top: 0.5em;
 }
 
-#leftoversForm table, #forgottenCredentials table{
+#leftoversForm table, #forgottenCredentials table, #deleteMember table, #deleteFoodPost table{
 	border-collapse: separate;
 	border-spacing: 1em 1em;
+}
+
+#deleteMember .tableFieldset th, #deleteFoodPost .tableFieldset th{
+	text-align: center;
 }
 
 /* ----------------- viewAccount ----------------- */

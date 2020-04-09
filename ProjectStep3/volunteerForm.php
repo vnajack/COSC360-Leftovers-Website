@@ -26,7 +26,7 @@
   if ($_SERVER["REQUEST_METHOD"] == "POST"){ //essentially is just checking for when the submit button has been pressed
 
     if (empty($_POST["name"])){ //if no name was entered in the form
-      $nameError = "Please enter your name"; //give this variable an error message (the variable is used in the html below)
+      $nameError = "Please enter your name."; //give this variable an error message (the variable is used in the html below)
     } elseif(!preg_match("/^[a-zA-Z ]*$/",$_POST["name"])){  //if a name WAS entered
       $nameError = "You must enter a valid name. A name can only contain letters, hyphens, and spaces.";
     }else {
@@ -34,7 +34,7 @@
       $validName = TRUE;
     }
 
-    if (!isset($_POST["whyVolunteer"])){ //text areas are weird, you can't check if they're empty
+    if (!isset($_POST["whyVolunteer"]) || empty($_POST["whyVolunteer"])){ //text areas are weird, you can't check if they're empty
       $whyVolunteerError = "Please provide an answer for why you want to volunteer with us.";
     } else {
       $whyVolunteer = $_POST["whyVolunteer"];
@@ -52,7 +52,7 @@
         $stmt->bindValue(1, $username); // Bind variable to the prepared statement as a parameter
         $stmt->execute(); // Attempt to execute the prepared statement
         if($stmt->rowCount() > 0){ // if the query returns anything greater than 0, then that username is already taken
-          $usernameError = "That username is already taken. Please choose a different username";
+          $usernameError = "That username is already taken. Please choose a different username.";
         } else {
           $validUsername = TRUE; //we finally have a valid username
         }
@@ -62,7 +62,7 @@
     if (empty($_POST["password"])){
       $passwordError = "A password is required.";
     } elseif(!preg_match("/.{6,}/",$_POST["password"])){ //checks to see if the format is valid
-      $passwordError = "Your password must contain 6 or more characters";
+      $passwordError = "Your password must contain 6 or more characters.";
     } else {
       $password = $_POST["password"];
       $validPassword= TRUE;
@@ -88,14 +88,14 @@
     }
 
     if(!isset($_POST["securityQuestion"])){
-      $securityQuestionError = "Please select a security question";
+      $securityQuestionError = "Please select a security question.";
     } else {
       $securityQuestion = $_POST["securityQuestion"];
       $validSecurityQuestion = TRUE;
     }
 
     if(empty($_POST["securityResponse"])){
-      $securityResponseError = "Please provide an answer to your security question";
+      $securityResponseError = "Please provide an answer to your security question.";
     } else {
       $securityResponse = $_POST["securityResponse"];
       $validSecurityResponse = TRUE;
@@ -170,7 +170,7 @@
         <h2>Part 1: Volunteer Application</h2>
         <p>This part of the form tells us about who you are</p>
         <p><label>Full Name:<span class="important-notice">*</span> </label>
-          <input type="text" name="name" title="Full name" autofocus  value = "<?php echo $name;?>"><span class="leftBlank"><?php echo $nameError;?></span></p>
+          <input type="text" name="name" title="Full name" autofocus  value = "<?php echo $name;?>"><?php echo "<span class=\"leftBlank\"> ".$nameError."</span>";?></p>
         <p><label>Year of Study: </label><select name="yearOfStudy" title="Year of Study">
           <option>1</option>
           <option>2</option>
@@ -179,9 +179,8 @@
           <option>5+</option>
         </select></p>
         <p><label>Program/Degree: </label> <input type="text" name="program" title="Program/Degree" value = "<?php echo $program;?>"></p>
-        <p><label>Why do you want to volunteer with the Leftovers club?<span class="important-notice">*</span></label><br>
-          <!-- Textareas work by having their value as the content between the tags !-->
-          <span class="leftBlank"><?php echo $whyVolunteerError;?></span><textarea name="whyVolunteer" id="reason" form="volunteer" title="Why do you want to volunteer?" rows=5><?php if(isset($_POST['whyVolunteer'])) {echo htmlentities ($_POST['whyVolunteer']); }?></textarea></p>
+        <p><label>Why do you want to volunteer with the Leftovers club?<span class="important-notice">*</span></label><?php echo "<span class=\"leftBlank\"> ".$whyVolunteerError."</span>";?><br>
+        <textarea name="whyVolunteer" id="reason" form="volunteer" title="Why do you want to volunteer?" rows=5><?php if(isset($_POST['whyVolunteer'])) {echo htmlentities ($_POST['whyVolunteer']); }?></textarea></p>
             <p><label>What is your general availability? </label> <select name="availabilityChoices" title="What is your general availability">
               <option>Any time</option>
               <option>Mornings</option>
@@ -217,11 +216,13 @@
                   <table class="tableFieldset">
                     <tr>
                       <th><label>Username:<span class="important-notice">*</span></label></th>
-                      <td><span class="leftBlank"><?php echo $usernameError;?></span><br><input type="text" name="username" title="Can only contain letters and numbers. No punctuation or special characters." value = "<?php echo $username;?>"></td>
+                      <td><input type="text" name="username" title="Can only contain letters and numbers. No punctuation or special characters." value = "<?php echo $username;?>"></td>
+                      <?php echo "<td><span class=\"leftBlank\">".$usernameError."</span></td>";?>
                     </tr>
                     <tr>
                       <th><label>Password:<span class="important-notice">*</span></label></th>
-                      <td><span class="leftBlank"><?php echo $passwordError;?></span><br><input type="password" name="password" title="Your password must contain 6 or more characters"  value = "<?php echo $password;?>"></td>
+                      <td><input type="password" name="password" title="Your password must contain 6 or more characters"  value = "<?php echo $password;?>"></td>
+                      <?php echo "<td><span class=\"leftBlank\">".$passwordError."</span></td>";?>
                     </tr>
                     <tr>
                       <th><label>Profile Picture:</label></th>
@@ -229,7 +230,8 @@
                     </tr>
                     <tr>
                       <th><label>Email:<span class="important-notice">*</span></label></th>
-                      <td><span class="leftBlank"><?php echo $emailError;?></span><br><input type="email" name="email"  value = "<?php echo $email;?>"></td>
+                      <td><input type="email" name="email"  value = "<?php echo $email;?>"></td>
+                      <?php echo "<td><span class=\"leftBlank\">".$emailError."</span></td>";?>
                     </tr>
                     <tr>
                       <th><label>Phone Number:</label></th>
@@ -237,15 +239,17 @@
                     </tr>
                     <tr>
                       <th><label>Choose a security question:<span class="important-notice">*</span></label></th>
-                      <td><span class="leftBlank"><?php echo $securityQuestionError;?></span><br><select name="securityQuestion" id="secQuestion" title="This is used to reset your password if you forget it">
+                      <td><select name="securityQuestion" id="secQuestion" title="This is used to reset your password if you forget it">
                         <option value="" disabled selected hidden>Choose a security question</option>
                         <option value="Q1">What is the name of your first pet?</option>
                         <option value="Q2">What was the first name of your childhood best friend?</option>
                       </select></td>
+                      <?php echo "<td><span class=\"leftBlank\">".$securityQuestionError."</span></td>";?>
                     </tr>
                     <tr>
                       <th><label>Answer for security question:<span class="important-notice">*</span></label></th>
-                      <td><span class="leftBlank"><?php echo $securityResponseError;?></span><input type="text" name="securityResponse"  title="Please enter a response to your security question"  value = "<?php echo $securityResponse;?>"></td>
+                      <td><input type="text" name="securityResponse"  title="Please enter a response to your security question"  value = "<?php echo $securityResponse;?>"></td>
+                      <?php echo "<td><span class=\"leftBlank\">".$securityResponseError."</span></td>";?>
                     </tr>
                   </table>
                 </fieldset>

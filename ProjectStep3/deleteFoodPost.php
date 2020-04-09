@@ -47,7 +47,7 @@
             print("<script>window.alert('Error. Unable to delete post. Please try again later.');</script>");
           }
         }else{
-          $postID_error = "The names did not match";
+          $postID_error = "The numbers did not match";
         }
         closeConnection($pdo);
       }
@@ -111,7 +111,7 @@
             </tr>
             <tr>
               <td><input type="text" name="postID" title="Enter the post's ID number to confirm"></td>
-              <td><span class="leftBlank"><?php echo $postID_error; ?></span></td>
+              <?php echo "<td><span class=\"leftBlank\">".$postID_error."</span></td>";?>
             </tr>
             <tr>
               <td><input type="submit" value="Delete"></td>

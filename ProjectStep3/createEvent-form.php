@@ -6,9 +6,7 @@ require_once('include/db_connection.php');
 //set things up for pdos
 try{
   $pdo = openConnection();
-  echo "<h3>Connected Successfully</h3>";
 } catch (PDOException $e){
-  echo "<h3> Connection failed</h3>";
   die($e->getMessage());
 }
 
@@ -95,24 +93,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){ //essentially is just checking for wh
     <table class="tableFieldset">
       <tr>
         <th><label>Event Title:<span class="important-notice">*</span></label></th>
-        <td><span class="leftBlank"><?php echo $titleError;?></span><input type="text" placeholder="Name of event" id="title" name="eventTitle" autofocus value = "<?php echo $title;?>"></td>
+        <td><?php echo "<span class=\"leftBlank\">".$titleError."</span>";?><input type="text" placeholder="Name of event" id="title" name="eventTitle" autofocus value = "<?php echo $title;?>"></td>
       </tr>
       <tr>
         <th><label>Poster:<span class="important-notice">*</span></label></th>
-        <td><span class="leftBlank"><?php echo $eventPosterError;?></span><input type="file"  name="eventPoster" value = "<?php echo $eventPoster; ?>" required>
+        <td><?php echo "<span class=\"leftBlank\">".$eventPosterError."</span>";?><input type="file"  name="eventPoster" value = "<?php echo $eventPoster; ?>" required>
         </td>
       </tr>
       <tr>
         <th><label>Event Date and Time:<span class="important-notice">*</span></label></th>
-        <td><span class="leftBlank"><?php echo $eventDateError;?></span><input type="datetime-local" name="eventDate" id="datetime" value = "<?php echo $eventDate; ?>"></td>
+        <td><?php echo "<span class=\"leftBlank\">".$eventDateError."</span>";?><input type="datetime-local" name="eventDate" id="datetime" value = "<?php echo $eventDate; ?>"></td>
       </tr>
       <tr>
         <th><label>Event Location:<span class="important-notice">*</span></label></th>
-        <td><span class="leftBlank"><?php echo $eventLocationError;?></span><input type="text" placeholder="Where is the event being held?" id="location" name="eventLocation" value = "<?php echo $eventLocation; ?>"></td>
+        <td><?php echo "<span class=\"leftBlank\">".$eventLocationError."</span>";?><input type="text" placeholder="Where is the event being held?" id="location" name="eventLocation" value = "<?php echo $eventLocation; ?>"></td>
       </tr>
       <tr>
         <th><label>Description of the Event:<span class="important-notice">*</span></label></th>
-        <td><span class="leftBlank"><?php echo $eventDescriptionError;?></span><input type="leftBlank" name="eventDescription" id="description" placeholder="What's happening at this event?" value="<?php echo $eventDescription; ?>"></td>
+        <td><?php echo "<span class=\"leftBlank\">".$eventDescriptionError."</span>";?><input type="leftBlank" name="eventDescription" id="description" placeholder="What's happening at this event?" value="<?php echo $eventDescription; ?>"></td>
       </tr>
     </table>
   </fieldset>

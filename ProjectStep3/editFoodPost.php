@@ -167,7 +167,7 @@
         <tr>
           <th><label>How much longer (in minutes) will the leftovers be fresh?<span class="important-notice">*</span></label></th>
           <td><input type="number" name="minutesSafe" min="1" max="45" title="How much longer the leftovers will be fresh (in minutes)"value = "<?php echo $minutesSafe;?>"></td>
-          <td><span class="leftBlank"><?php echo $minutesSafeError;?></span></td>
+          <?php echo "<td><span class=\"leftBlank\">".$minutesSafeError."</span></td>";?>
         </tr>
         <tr>
           <th><label>Updated image:</label></th>
@@ -177,12 +177,12 @@
         <tr>
           <th><label>List the food items you picked up:<span class="important-notice">*</span></label></th>
           <td><input type="text"  name="postFoodItems" title="Please list the food items you picked up." value = "<?php echo $postFoodItems;?>"></td>
-          <td><span class="leftBlank"><?php echo $postFoodItemsError;?></span></td>
+          <?php echo "<td><span class=\"leftBlank\">".$postFoodItemsError."</span></td>";?>
         </tr>
         <tr>
           <th><label>Where can these leftovers be found?<span class="important-notice">*</span></label></th>
           <td><input type="text" name="postLocation" title="Please indicate where you are taking the leftovers." value = "<?php echo $postLocation;?>"></td>
-          <td><span class="leftBlank"><?php echo $postLocationError;?></span></td>
+          <?php echo "<td><span class=\"leftBlank\">".$postLocationError."</span></td>";?>
         </tr>
         <tr>
           <th><label>Write a message for your post:</label></th>
@@ -197,7 +197,7 @@
         <tr>
           <th><label>Where did the leftovers come from?<span class="important-notice">*</span></label></th>
           <td><input type="text" name="donorName" title="Where did these leftovers come from?" value = "<?php echo $donorName;?>"></td>
-          <td><span class="leftBlank"><?php echo $donorNameError;?></span></td>
+          <?php echo "<td><span class=\"leftBlank\">".$donorNameError."</span></td>";?>
         </tr>
         <tr>
           <th><label>The last member to update this post:</label></th>

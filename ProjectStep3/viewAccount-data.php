@@ -150,11 +150,11 @@
           </tr>
           <tr>
             <th><label> Name: </label></th>
-            <td> <input type="text" name="name" title="Full name" autofocus  value = "<?php echo $name;?>"><span class="leftBlank"><?php echo $nameError;?></span></td>
+            <td> <input type="text" name="name" title="Full name" autofocus  value = "<?php echo $name;?>"><?php echo "<span class=\"leftBlank\">".$nameError."</span>";?></td>
           </tr>
           <tr>
             <th><label> Email Address: </label></th>
-            <td> <input type="text" name="email" value="<?php echo $email; ?>" required><span class="leftBlank"><?php echo $emailError;?></span></td>
+            <td> <input type="text" name="email" value="<?php echo $email; ?>" required><?php echo "<span class=\"leftBlank\">".$emailError."</span>";?></td>
           </tr>
           <tr>
             <th><label>Phone Number:</label></th>
@@ -177,7 +177,7 @@
           </tr>
           <tr>
             <th><label>Password:</label></th>
-            <td><span class="leftBlank"><?php echo $passwordError;?></span><br><input type="password" name="password" required></td>
+            <td><?php echo "<span class=\"leftBlank\">".$passwordError."</span>";?><br><input type="password" name="password" required></td>
           </tr>
         </tbody>
         <tfoot>
