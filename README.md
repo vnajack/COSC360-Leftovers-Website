@@ -1,4 +1,4 @@
-# COSC360-Leftovers-Website
+# Leftovers Club Website
 Final Project due 9 April 2020
 
 Authors: Veronica Jack and Katrina Martel
